@@ -13,6 +13,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -35,4 +41,15 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // 集成React Native
+    implementation "com.facebook.react:react-native:0.63.5" // From node_modules
+    implementation "org.webkit:android-jsc:+"
+
+    implementation ("com.alibaba:arouter-api:1.4.1") {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor "com.alibaba:arouter-compiler:1.2.2"
 }
+
+// 集成React Native
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
