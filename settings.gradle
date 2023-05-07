@@ -4,3 +4,8 @@ include ':app'
 
 // 集成React Native
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':library-resource'
+include ':business-http'
+include ':business-common'
+include ':module-home'
+include ':library-basic'

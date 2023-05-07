@@ -13,7 +13,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        // ARoute路由
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -44,16 +44,15 @@ dependencies {
     // 集成React Native
     implementation "com.facebook.react:react-native:0.63.5" // From node_modules
     implementation "org.webkit:android-jsc:+"
-
-    implementation ("com.alibaba:arouter-api:1.4.1") {
+    // ARoute路由
+    implementation ("com.alibaba:arouter-api:$versions_arouter_api") {
         exclude group: 'com.android.support'
     }
-    annotationProcessor "com.alibaba:arouter-compiler:1.2.2"
+    annotationProcessor "com.alibaba:arouter-compiler:$versions_arouter_compiler"
 
-    // 内存泄露检测
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
-
-
+    implementation project(':module-home')
+    implementation project(':business-common')
+    implementation project(':library-basic')
 }
 
 // 集成React Native

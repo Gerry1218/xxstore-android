@@ -5,32 +5,67 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.wanris.business.common.RouteManager;
+import com.wanris.business.common.base.activity.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+@Route(path = "/main/main")
+public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
 
-    private String TAG = "MainActivity";
+    private final static String TAG = MainActivity.class.getSimpleName();
     private TextView btnRN;
+    private TextView btnHome;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initViews();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+        ARouter.getInstance().inject(this);
     }
 
-    void initViews() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected MainContract.Presenter initPresenter() {
+        return new MainPresenter();
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+        super.initViews(savedInstanceState);
         btnRN = findViewById(R.id.tv_rn_btn);
+        btnHome = findViewById(R.id.tv_home_btn);
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
         btnRN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: ");
-                ARouter.getInstance()
-                        .build("/rn/RNTestActivity")
-                        .navigation();
+                RouteManager.startRNTestActivity();
             }
         });
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RouteManager.startHomeActivity();
+            }
+        });
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+        getPresenter().loadData();
+    }
+
+    @Override
+    protected boolean applyFullScreen() {
+        return true;
     }
 }
