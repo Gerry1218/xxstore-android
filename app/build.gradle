@@ -19,6 +19,35 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
+
+        flavorDimensions "versionCode"
+    }
+
+    // 根据渠道版本号自动生成包名
+    applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //服务地址类型
+                def serverUrlType = rootProject.ext.SERVER_CONFIG.SERVER_URL_TYPE
+                outputFileName = "xxshop"
+                def useReactNative = rootProject.ext.SERVER_CONFIG.USE_REACT_NATIVE.toBoolean()
+                outputFileName += "_" + defaultConfig.versionName
+                outputFileName += "_" + defaultConfig.versionCode
+                outputFileName += useReactNative ? "_rn" : ""
+                outputFileName += "_${variant.productFlavors[0].name}"
+                outputFileName += "_" + ((serverUrlType == 0) ? "prod" :"test")
+                outputFileName += "_" + buildType.name
+                outputFileName += "_" + new Date().format("yyyy-MM-dd_HHmm")
+                outputFileName += ".apk"
+            }
+    }
+
+    // 多渠道包
+    productFlavors {
+        // 小米
+        xm {}
+        // 华为
+        hw {}
     }
 
     buildTypes {
@@ -26,7 +55,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -53,6 +84,10 @@ dependencies {
     implementation project(':module-home')
     implementation project(':business-common')
     implementation project(':library-basic')
+
+    // glide图片加载
+    xmImplementation "com.github.bumptech.glide:glide:$versions_glide"
+    xmAnnotationProcessor "com.github.bumptech.glide:compiler:$versions_glide"
 }
 
 // 集成React Native

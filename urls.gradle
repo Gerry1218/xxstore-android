@@ -1,0 +1,64 @@
+project.ext {
+    Properties properties = new Properties()
+    properties.load(file("./build.properties").newDataInputStream())
+
+    //
+    // System.getenv获取的值对应的是Jenkins中对应的环境变量
+    //
+    // 版本名称
+    def versionName = System.getenv("VERSION_NAME")
+    if (versionName == null || versionName.trim().length() == 0) {
+        versionName = properties.getProperty("versionName").toString()
+    }
+
+    // 版本号
+    def versionCode = System.getenv("BUILD_NUMBER")
+    if (versionCode == null || versionCode.trim().length() == 0) {
+        versionCode = properties.getProperty("versionCode").toInteger()
+    } else {
+        versionCode = Integer.parseInt(versionCode)
+    }
+
+    // 服务地址类型
+    def serverUrlType = System.getenv("SERVER_URL_TYPE")
+    if (serverUrlType == null || serverUrlType.trim().length() == 0) {
+        serverUrlType = properties.getProperty("serverUrlType").toInteger()
+    } else {
+        serverUrlType = Integer.parseInt(serverUrlType)
+    }
+
+    // 启用react native
+    def useReactNative = System.getenv("USE_REACT_NATIVE")
+    if (useReactNative == null || useReactNative.trim().length() == 0) {
+        useReactNative = Boolean.valueOf(properties.getProperty("useReactNative")).toString()
+    } else {
+        useReactNative = Boolean.valueOf(useReactNative).toString();
+    }
+
+    println "serverUrlType:" + serverUrlType
+    println "versionName:" + versionName
+    println "versionCode:" + versionCode
+    println "useReactNative:" + useReactNative
+
+    def baseUrl
+    switch (serverUrlType) {
+        /** 生产环境 **/
+        case 0:
+            baseUrl = "https://app.wanris.com"
+            break
+
+        /** 测试环境 **/
+        case 1:
+            baseUrl = "https://app.wanris.com"
+            break
+    }
+
+    SERVER_CONFIG = [
+            VERSION_CODE        : versionCode,
+            VERSION_NAME        : versionName,
+            SERVER_URL_TYPE     : serverUrlType,
+            USE_REACT_NATIVE    : useReactNative,
+
+            BASE_URL            : baseUrl
+    ]
+}

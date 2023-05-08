@@ -3,6 +3,7 @@ package com.wanris.xxshop;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -16,6 +17,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private final static String TAG = MainActivity.class.getSimpleName();
     private TextView btnRN;
     private TextView btnHome;
+    private ImageView ivLogo;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -38,6 +40,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         super.initViews(savedInstanceState);
         btnRN = findViewById(R.id.tv_rn_btn);
         btnHome = findViewById(R.id.tv_home_btn);
+        ivLogo = findViewById(R.id.iv_logo);
+
+        loadImage();
     }
 
     @Override
@@ -67,5 +72,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     @Override
     protected boolean applyFullScreen() {
         return true;
+    }
+
+    private void loadImage() {
+        ImageLoader.load("https://puui.qpic.cn/qqvideo_ori/0/z3316b8w95y_1280_720/0", ivLogo);
     }
 }
