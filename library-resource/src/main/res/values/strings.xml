@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_home_icon">首页</string>
+    <string name="tab_chat_icon">群聊</string>
+    <string name="tab_video_icon">视频</string>
+    <string name="tab_cart_icon">购物车</string>
+    <string name="tab_mine_icon">我的</string>
+</resources>

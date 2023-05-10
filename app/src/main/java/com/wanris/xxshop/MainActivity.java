@@ -8,10 +8,13 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.wanris.business.common.RouteManager;
+import com.wanris.business.common.bean.ParamBean;
+import com.wanris.business.common.router.RouteManager;
+import com.wanris.business.common.Utils;
 import com.wanris.business.common.base.activity.BaseActivity;
+import com.wanris.business.common.router.RouterPath;
 
-@Route(path = "/main/main")
+@Route(path = RouterPath.MainActivityPath)
 public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
 
     private final static String TAG = MainActivity.class.getSimpleName();
@@ -58,7 +61,10 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RouteManager.startHomeActivity();
+                ParamBean bean = new ParamBean();
+                bean.setName("Gerry");
+                bean.setNumber(1218);
+                RouteManager.startHomeActivity(bean);
             }
         });
     }
@@ -67,6 +73,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     protected void initData() {
         super.initData();
         getPresenter().loadData();
+
+        // 子模块多渠道打包支持
+        Utils.logText();
     }
 
     @Override

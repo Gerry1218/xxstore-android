@@ -19,8 +19,15 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
+        flavorDimensions "versionCode"
     }
-
+    // 多渠道包
+    productFlavors {
+        // 小米
+        xm {}
+        // 华为
+        hw {}
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -47,4 +54,5 @@ dependencies {
     annotationProcessor "com.alibaba:arouter-compiler:$versions_arouter_compiler"
 
     implementation project(':library-basic')
+    implementation project(':library-resource')
 }

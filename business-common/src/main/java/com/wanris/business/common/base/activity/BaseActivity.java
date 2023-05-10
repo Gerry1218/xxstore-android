@@ -1,11 +1,12 @@
 package com.wanris.business.common.base.activity;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gyf.barlibrary.ImmersionBar;
+import com.gyf.immersionbar.ImmersionBar;
 import com.wanris.business.common.R;
 import com.wanris.business.common.base.present.IBasePresenter;
 import com.wanris.business.common.base.view.IBaseView;
@@ -16,6 +17,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter> extends AppCompatActivity {
+    protected String TAG = this.getClass().getSimpleName();
     public BaseActivity instance;
 
     /**
@@ -87,7 +89,8 @@ public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter
         }
 
         if (applyImmersionBar() || applyFullScreen()) {
-            if (immersionBar != null) immersionBar.destroy();
+//            if (immersionBar != null) immersionBar.destroy(this);
+            immersionBar = null;
         }
 
         if (applyEventBus()) {
@@ -179,6 +182,16 @@ public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter
                 .init();
     }
 
+    /**
+     * 设置系统statusBar颜色
+     * @param isDark
+     */
+    protected void setImmersionBar(boolean isDark) {
+        immersionBar = ImmersionBar.with(this);
+        immersionBar.keyboardEnable(false)
+                .statusBarDarkFont(isDark)
+                .init();
+    }
     /**
      * 初始化
      * @param savedInstanceState

@@ -19,8 +19,17 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
-    }
+        flavorDimensions "versionCode"
 
+    }
+// 多渠道包
+    productFlavors {
+        publishNonDefault true
+        // 小米
+        xm {}
+        // 华为
+        hw {}
+    }
     buildTypes {
         release {
             minifyEnabled false
