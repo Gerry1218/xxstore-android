@@ -49,7 +49,7 @@ dependencies {
     // 内存泄露检测
     debugApi "com.squareup.leakcanary:leakcanary-android:$version_leakcanary"
     // 沉浸式状态栏
-    api 'com.gyf.immersionbar:immersionbar:version_immersionbar'
+    api "com.gyf.immersionbar:immersionbar:$version_immersionbar"
     // RxJava2
     api "io.reactivex.rxjava2:rxjava:$versions_rxjava"
     api "io.reactivex.rxjava2:rxandroid:$versions_rxandroid"
