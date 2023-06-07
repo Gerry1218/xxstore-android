@@ -20,9 +20,8 @@ android {
             }
         }
         flavorDimensions "versionCode"
-
     }
-// 多渠道包
+    // 多渠道包
     productFlavors {
         publishNonDefault true
         // 小米
@@ -56,5 +55,6 @@ dependencies {
     annotationProcessor "com.alibaba:arouter-compiler:$versions_arouter_compiler"
 
     implementation project(':business-common')
+    implementation project(':business-http')
     implementation project(':library-basic')
 }

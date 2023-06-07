@@ -1,7 +1,7 @@
 package com.wanris.business.common.base.activity;
 
-import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter> extends AppCompatActivity {
-    protected String TAG = this.getClass().getSimpleName();
+    protected String TAG = getClass().getSimpleName();
     public BaseActivity instance;
 
     /**
@@ -31,6 +31,7 @@ public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
         if (getLayoutId() != 0) {
             setContentView(getLayoutId());
         }
@@ -61,25 +62,30 @@ public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter
     @Override
     protected void onStart() {
         super.onStart();
+        Log.d(TAG, "onStart: ");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume: ");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d(TAG, "onPause: ");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        Log.d(TAG, "onStop: ");
     }
 
     @Override
     protected void onDestroy() {
+        Log.d(TAG, "onDestroy: ");
         if (compositeDisposable != null) {
             compositeDisposable.clear();
             compositeDisposable = null;
@@ -102,6 +108,7 @@ public abstract class BaseActivity<V extends IBaseView, P extends IBasePresenter
     @Override
     public void finish() {
         super.finish();
+        Log.d(TAG, "finish: ");
     }
 
     /**

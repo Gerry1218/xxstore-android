@@ -1,5 +1,6 @@
 package com.wanris.module.home.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.common.bean.ParamBean;
+import com.wanris.business.common.router.RouteManager;
 import com.wanris.business.common.router.RouterPath;
 import com.wanris.module.home.R;
 import com.wanris.module.home.contract.HomeContract;
@@ -49,6 +51,7 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
     @Override
     protected void initViews(Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
+        setImmersionBar(false);
         rlBottomTab = findViewById(R.id.rl_bottom_tab);
         rbHomeTab = findViewById(R.id.rb_tab_home);
         rlBottom = findViewById(R.id.rl_bottom);
@@ -97,8 +100,9 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
         rlBottomTab.setBackgroundColor(getResources().getColor(R.color.white));
         switch (tabIndex) {
             case 0:
+                setImmersionBar(false);
                 if (homeFragment == null) {
-                    homeFragment = (BaseFragment) ARouter.getInstance().build("/home/homeFragment").navigation();
+                    homeFragment = (BaseFragment) RouteManager.startHomeFragment();
                     ft.add(R.id.layout_fragment, homeFragment);
                 } else {
                     ft.show(homeFragment);
@@ -106,7 +110,7 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
                 break;
             case 1:
                 if (chatFragment == null) {
-                    chatFragment = (BaseFragment) ARouter.getInstance().build("/home/chatFragment").navigation();
+                    chatFragment = (BaseFragment) RouteManager.startHomeChatFragment();
                     ft.add(R.id.layout_fragment, chatFragment);
                 } else {
                     ft.show(chatFragment);
@@ -115,7 +119,7 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
             case 2:
                 rlBottomTab.setBackgroundColor(getResources().getColor(R.color.color_0A0A0A));
                 if (videoFragment == null) {
-                    videoFragment = (BaseFragment) ARouter.getInstance().build("/home/videoFragment").navigation();
+                    videoFragment = (BaseFragment) RouteManager.startHomeVideoFragment();
                     ft.add(R.id.layout_fragment, videoFragment);
                 } else {
                     ft.show(videoFragment);
@@ -123,7 +127,7 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
                 break;
             case 3:
                 if (cartFragment == null) {
-                    cartFragment = (BaseFragment) ARouter.getInstance().build("/home/cartFragment").navigation();
+                    cartFragment = (BaseFragment) RouteManager.startHomeCartFragment();
                     ft.add(R.id.layout_fragment, cartFragment);
                 } else {
                     ft.show(cartFragment);
@@ -131,7 +135,7 @@ public class HomeActivity extends BaseActivity<HomeContract.View, HomeContract.P
                 break;
             case 4:
                 if (mineFragment == null) {
-                    mineFragment = (BaseFragment) ARouter.getInstance().build("/home/mineFragment").navigation();
+                    mineFragment = (BaseFragment) RouteManager.startHomeMineFragment();
                     ft.add(R.id.layout_fragment, mineFragment);
                 } else {
                     ft.show(mineFragment);

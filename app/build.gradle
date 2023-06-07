@@ -86,8 +86,8 @@ dependencies {
     implementation project(':library-basic')
 
     // glide图片加载
-    xmImplementation "com.github.bumptech.glide:glide:$versions_glide"
-    xmAnnotationProcessor "com.github.bumptech.glide:compiler:$versions_glide"
+//    xmImplementation "com.github.bumptech.glide:glide:$versions_glide"
+//    xmAnnotationProcessor "com.github.bumptech.glide:compiler:$versions_glide"
 }
 
 // 集成React Native

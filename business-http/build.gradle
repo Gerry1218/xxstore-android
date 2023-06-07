@@ -13,6 +13,15 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        flavorDimensions "versionCode"
+        buildConfigField("String", "BASE_URL", "\"" + rootProject.ext.SERVER_CONFIG.BASE_URL.toString() + "\"")
+    }
+    // 多渠道包
+    productFlavors {
+        // 小米
+        xm {}
+        // 华为
+        hw {}
     }
 
     buildTypes {
@@ -34,4 +43,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation project(':business-common')
+    implementation project(':library-basic')
 }

@@ -57,5 +57,22 @@ dependencies {
     api "com.jakewharton.rxbinding2:rxbinding:$versions_rxbinding"
     // 事件总线EventBus
     api "org.greenrobot:eventbus:$versions_eventbus"
+    // viewpager2 and recyclerview
+    api "androidx.viewpager2:viewpager2:$versions_viewpager2"
+    api "androidx.recyclerview:recyclerview:$versions_recyclerview"
+    // tabBar
+    api "io.github.h07000223:flycoTabLayout:$versions_flycoTab"
+    // retrofit2
+    api "com.squareup.retrofit2:retrofit:$versions_retrofit"
+    api "com.squareup.retrofit2:converter-gson:$versions_converter_gson"
+    api "com.squareup.retrofit2:adapter-rxjava2:$versions_adapter_rxjava2"
+    // RecycleView适配器
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions_BaseRecyclerViewAdapterHelper"
+    // 图片加载
+    api "com.github.bumptech.glide:glide:$versions_glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions_glide"
+    api "jp.wasabeef:glide-transformations:$versions_glide_transformations"
+    // tabLayout
+    api "io.github.h07000223:flycoTabLayout:$versions_FlycoTabLayout"
 
 }

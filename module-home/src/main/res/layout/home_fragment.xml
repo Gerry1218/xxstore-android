@@ -1,13 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E90FF">
+    android:background="@color/color_FF3730">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Home fragment"
-        android:textSize="@dimen/dp_60"/>
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_20"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/color_333333">
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="84dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_navbar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ellipsize="end"
+                        android:maxWidth="@dimen/dp_200"
+                        android:maxLines="1"
+                        android:text="XXShop"
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/img_msg"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:src="@mipmap/btn_icon_news" />
+
+
+                <ImageView
+                    android:id="@+id/ivTitleScan"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:src="@mipmap/btn_icon_scan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_34"
+                android:layout_below="@+id/rl_navbar"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:background="@drawable/layout_homepage_search_bg">
+
+                <ImageView
+                    android:id="@+id/store_search_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/btn_icon_search" />
+
+                <TextView
+                    android:id="@+id/tvDefaultHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_21"
+                    android:layout_toLeftOf="@id/cameraBtn"
+                    android:layout_toRightOf="@id/store_search_2"
+                    android:gravity="center_vertical"
+                    android:hint="搜搜看"
+                    android:textColor="@color/color_666666"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/cameraBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:src="@mipmap/btn_icon_camera" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            app:tl_divider_color="#fff"
+            app:tl_divider_width="0dp"
+            app:tl_indicator_height="@dimen/dp_0"
+            app:tl_indicator_style="NORMAL"
+            app:tl_textSelectColor="#FFFFFF"
+            app:tl_textUnselectColor="#FFFFFF"
+            app:tl_textsize="14dp"
+            />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
 </RelativeLayout>
