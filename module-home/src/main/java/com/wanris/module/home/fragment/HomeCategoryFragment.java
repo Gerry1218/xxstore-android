@@ -7,7 +7,6 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.wanris.business.ICallback;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.response.XXGoodsListData;
@@ -15,7 +14,6 @@ import com.wanris.module.home.R;
 import com.wanris.module.home.adapter.HomeCategoryGoodsListAdapter;
 import com.wanris.module.home.contract.HomeCategoryContract;
 import com.wanris.module.home.presenter.HomeCategoryPresenter;
-import com.wanris.module.home.provider.IGoodsProvider;
 import com.wanris.module.home.provider.bean.XXGoodsListRequest;
 
 public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View, HomeCategoryContract.Presenter> implements HomeCategoryContract.View {
@@ -23,6 +21,8 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
     private static final String CATEGORY_ID = "categoryId";
     private String categoryId;
     private RecyclerView rvGoodsList;
+    private int pageNo = 1;
+    private final int pageSize = 20;
     private HomeCategoryGoodsListAdapter goodsListAdapter;
 
     public static HomeCategoryFragment getInstance(String id) {
@@ -44,6 +44,8 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
         categoryId = getArguments().getString(CATEGORY_ID);
         rvGoodsList = view.findViewById(R.id.rv_goods_list);
         goodsListAdapter = new HomeCategoryGoodsListAdapter();
+        goodsListAdapter.setEnableLoadMore(true);
+        goodsListAdapter.setPreLoadNumber(5);
         rvGoodsList.setAdapter(goodsListAdapter);
         rvGoodsList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
     }
@@ -51,6 +53,9 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
     @Override
     protected void initListener() {
         super.initListener();
+        goodsListAdapter.setOnLoadMoreListener(() -> {
+            loadNextPage();
+        }, rvGoodsList);
     }
 
     @Override
@@ -78,13 +83,37 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
         if (this.categoryId != "1") {
             return;
         }
+        pageNo = 1;
+        doRequestGoodsList();
+    }
+
+    public void loadNextPage() {
+        pageNo++;
+        doRequestGoodsList();
+    }
+
+    private void doRequestGoodsList() {
         XXGoodsListRequest request = new XXGoodsListRequest();
-        request.setPageNo(1);
-        request.setPageSize(20);
+        request.setPageNo(pageNo);
+        request.setPageSize(pageSize);
         getPresenter().getGoodsList(request, new ICallback<XXGoodsListData>() {
             @Override
             public void success(XXGoodsListData data) {
-                goodsListAdapter.setNewData(data.getItems());
+                if (data == null || data.getItems() == null) {
+                    Log.d(TAG, "success: item is null");
+                    return;
+                }
+                if (request.getPageNo() == 1) {
+                    goodsListAdapter.setNewData(data.getItems());
+                }
+                else {
+                    goodsListAdapter.addData(data.getItems());
+                }
+
+                goodsListAdapter.loadMoreComplete();
+                if (data.getItems().size() < pageSize) {
+                    goodsListAdapter.loadMoreEnd();
+                }
             }
 
             @Override

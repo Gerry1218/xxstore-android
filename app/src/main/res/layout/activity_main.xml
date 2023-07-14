@@ -19,25 +19,28 @@
             android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!" />
+            android:text="Hello World!"
+            android:textSize="@dimen/dp_30"/>
 
         <TextView
             android:id="@+id/tv_rn_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/teal_200"
             android:padding="5dp"
-            android:text="进入RN页面" />
+            android:text="进入RN页面"
+            android:textSize="@dimen/dp_20"/>
 
         <TextView
             android:id="@+id/tv_home_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/teal_200"
             android:padding="5dp"
-            android:text="进入Home页面" />
+            android:text="进入Home页面"
+            android:textSize="@dimen/dp_20"/>
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_marginTop="10dp"
