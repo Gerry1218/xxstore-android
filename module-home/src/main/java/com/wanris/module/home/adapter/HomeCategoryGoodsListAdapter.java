@@ -9,11 +9,11 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.wanris.business.common.utils.GlideHelper;
 import com.wanris.business.common.utils.PriceHelper;
+import com.wanris.business.common.utils.WidgetHelper;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.home.R;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.util.ArrayList;
 
 public class HomeCategoryGoodsListAdapter extends BaseQuickAdapter<XXGoodsListData.XXGoodsItemBean, BaseViewHolder> {
 
@@ -39,8 +39,9 @@ public class HomeCategoryGoodsListAdapter extends BaseQuickAdapter<XXGoodsListDa
         TextView goodsPrice = baseViewHolder.itemView.findViewById(R.id.tv_price);
 
         GlideHelper.loadTopRoundCorner(bean.getImg(), goodsImage, R.mipmap.icon_image_error, R.mipmap.icon_image_error,5);
-        goodsName.setText(bean.getTitle());
-
+        ArrayList<Integer> list = new ArrayList();
+        list.add(R.mipmap.tag_holiday);
+        WidgetHelper.setDrawableText(mContext, goodsName, bean.getTitle(), list);
         CharSequence price = PriceHelper.priceString(bean.getPrice());
         goodsPrice.setText(price);
     }
