@@ -3,9 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_goods_list"
+    <com.wanris.business.common.ui.widget.VerticalSwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="match_parent" >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_goods_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.wanris.business.common.ui.widget.VerticalSwipeRefreshLayout>
 </LinearLayout>

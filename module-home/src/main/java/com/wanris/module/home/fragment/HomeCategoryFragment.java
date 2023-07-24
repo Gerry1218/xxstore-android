@@ -6,9 +6,11 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wanris.business.ICallback;
 import com.wanris.business.common.base.fragment.BaseFragment;
+import com.wanris.business.common.ui.widget.VerticalSwipeRefreshLayout;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.home.R;
 import com.wanris.module.home.adapter.HomeCategoryGoodsListAdapter;
@@ -24,6 +26,8 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
     private int pageNo = 1;
     private final int pageSize = 20;
     private HomeCategoryGoodsListAdapter goodsListAdapter;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public static HomeCategoryFragment getInstance(String id) {
         HomeCategoryFragment fragment = new HomeCategoryFragment();
@@ -48,6 +52,8 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
         goodsListAdapter.setPreLoadNumber(5);
         rvGoodsList.setAdapter(goodsListAdapter);
         rvGoodsList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
     }
 
     @Override
@@ -56,6 +62,11 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
         goodsListAdapter.setOnLoadMoreListener(() -> {
             loadNextPage();
         }, rvGoodsList);
+
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            Log.d(TAG, "setOnRefreshListener: ");
+            requestGoodsList();
+        });
     }
 
     @Override
@@ -110,6 +121,9 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
                     goodsListAdapter.addData(data.getItems());
                 }
 
+                if (swipeRefreshLayout.isRefreshing()) {
+                    swipeRefreshLayout.setRefreshing(false);
+                }
                 goodsListAdapter.loadMoreComplete();
                 if (data.getItems().size() < pageSize) {
                     goodsListAdapter.loadMoreEnd();
