@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="goods_item_bkg_color">#f0f0f0</color>
+    <color name="primary_bkg_gray">#f2f2f2</color>
+    <color name="primary_red">#ffff3837</color>
+    <color name="primary_text_color">#ff333333</color>
+    <color name="color_999">#999999</color>
 </resources>

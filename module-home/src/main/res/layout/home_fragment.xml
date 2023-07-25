@@ -106,7 +106,7 @@
 
         </RelativeLayout>
 
-        <com.flyco.tablayout.SlidingTabLayout
+        <com.wanris.business.common.ui.widget.TextImageSlidingTabLayout
             android:id="@+id/tl_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_36"

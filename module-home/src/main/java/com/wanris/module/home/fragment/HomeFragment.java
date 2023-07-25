@@ -19,6 +19,7 @@ import com.google.android.material.tabs.TabItem;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.common.bean.TabItemBean;
 import com.wanris.business.common.router.RouterPath;
+import com.wanris.business.common.ui.widget.TextImageSlidingTabLayout;
 import com.wanris.module.home.R;
 import com.wanris.module.home.contract.HomeFragmentContract;
 import com.wanris.module.home.presenter.HomeFragmentPresenter;
@@ -34,7 +35,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentContract.View, HomeFr
 
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
-    private SlidingTabLayout tlTabLayout;
+    private TextImageSlidingTabLayout tlTabLayout;
     private String[] titles;
     private List<TabItemBean> list = new ArrayList<>();
     private List<BaseFragment> fragments = new ArrayList<>();

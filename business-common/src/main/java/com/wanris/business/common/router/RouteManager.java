@@ -13,6 +13,10 @@ public class RouteManager {
         return startActivity(RouterPath.HomeActivityPath, obj);
     }
 
+    public static Object startGoodsDetailActivity(Serializable obj) {
+        return startActivity(RouterPath.GoodsDetailActivity, obj);
+    }
+
     public static Object startRNTestActivity() {
         return startActivity(RouterPath.RNTestActivityPath);
     }

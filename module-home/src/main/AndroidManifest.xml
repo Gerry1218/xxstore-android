@@ -4,10 +4,15 @@
     package="com.wanris.module.home">
 
     <application>
-        <activity android:name=".activity.HomeActivity" android:exported="true">
+        <activity android:name=".activity.HomeActivity" android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
+        </activity>
+        <activity android:name="com.wanris.module.goods.activity.GoodsDetailActiviy"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 </manifest>

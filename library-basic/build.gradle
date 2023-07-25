@@ -34,7 +34,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
     testImplementation 'junit:junit:4.+'
@@ -74,5 +73,8 @@ dependencies {
     api "jp.wasabeef:glide-transformations:$versions_glide_transformations"
     // tabLayout
     api "io.github.h07000223:flycoTabLayout:$versions_FlycoTabLayout"
-
+    // banner
+    api "com.youth.banner:banner:$versions_banner"
+    // SuperTextView
+    api "com.github.chenBingX:SuperTextView:$version_superTextView"
 }

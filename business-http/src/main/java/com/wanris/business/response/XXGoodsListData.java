@@ -1,8 +1,9 @@
 package com.wanris.business.response;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class XXGoodsListData {
+public class XXGoodsListData implements Serializable {
     private Integer code;
     private Integer count;
     private String msg;
@@ -76,7 +77,7 @@ public class XXGoodsListData {
         this.items = items;
     }
 
-    static public class XXGoodsItemBean {
+    static public class XXGoodsItemBean implements Serializable {
     private long categoryID;
     private long deliveryTime;
     private String description;
@@ -222,7 +223,7 @@ public class XXGoodsListData {
         this.vipPrice = vipPrice;
     }
 }
-    static public class SkuList {
+    static public class SkuList implements Serializable {
         private String barCode;
         private long freezeStock;
         private long gmtCreate;
