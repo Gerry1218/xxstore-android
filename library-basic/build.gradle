@@ -77,4 +77,6 @@ dependencies {
     api "com.youth.banner:banner:$versions_banner"
     // SuperTextView
     api "com.github.chenBingX:SuperTextView:$version_superTextView"
+    // 腾讯x5 webview
+    api 'com.tencent.tbs:tbssdk:44286'
 }

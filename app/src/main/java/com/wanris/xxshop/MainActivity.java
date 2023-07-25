@@ -13,6 +13,7 @@ import com.wanris.business.common.router.RouteManager;
 import com.wanris.business.common.Utils;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
+import com.wanris.business.common.ui.widget.X5WebView;
 
 @Route(path = RouterPath.MainActivityPath)
 public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
@@ -21,6 +22,8 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private TextView btnRN;
     private TextView btnHome;
     private ImageView ivLogo;
+
+    private X5WebView webview;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -44,8 +47,8 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         btnRN = findViewById(R.id.tv_rn_btn);
         btnHome = findViewById(R.id.tv_home_btn);
         ivLogo = findViewById(R.id.iv_logo);
+        webview = findViewById(R.id.x5Webview);
 
-        loadImage();
     }
 
     @Override
@@ -73,6 +76,12 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     protected void initData() {
         super.initData();
         getPresenter().loadData();
+
+        // 根据渠道加载对应方法
+        loadImage();
+
+        // x5Webview测试
+        webview.loadUrl("https://www.baidu.com");
 
         // 子模块多渠道打包支持
         Utils.logText();
