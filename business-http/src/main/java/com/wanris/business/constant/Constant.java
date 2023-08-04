@@ -2,8 +2,6 @@ package com.wanris.business.constant;
 
 public class Constant {
 
-    public static final int BUTTON_THROTTLE_TIME = 1;
-
     public static final String PLATFORM = "Android";
 
     /**

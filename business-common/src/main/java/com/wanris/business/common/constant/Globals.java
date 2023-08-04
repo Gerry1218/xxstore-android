@@ -10,4 +10,6 @@ public class Globals {
     public static final String USER_ACCOUNT = "user_name";
     public static final String USER_PASSWORD = "user_password";
 
+    public static final int BUTTON_THROTTLE_TIME = 1;
+
 }

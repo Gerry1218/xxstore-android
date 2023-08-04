@@ -5,4 +5,6 @@
     <string name="tab_video_icon">视频</string>
     <string name="tab_cart_icon">购物车</string>
     <string name="tab_mine_icon">我的</string>
+
+    <string name="skip_button_text"><![CDATA[<font color="#fb473e">%1$ds</font><font color="#000000"> 跳过</font>]]></string>
 </resources>
