@@ -34,6 +34,7 @@
 
 <!--        测试用页面-->
         <activity android:name=".test.X5WebViewActivity" android:screenOrientation="portrait" />
+        <activity android:name=".test.JSWebViewActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

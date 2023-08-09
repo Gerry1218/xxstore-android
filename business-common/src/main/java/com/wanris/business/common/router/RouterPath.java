@@ -2,7 +2,9 @@ package com.wanris.business.common.router;
 
 public class RouterPath {
     public static final String RNTestActivityPath = "/rn/RNTestActivity";
-    public static final String test_X5WebViewActivity = "/test/x5webview";
+    public static final String test_X5WebViewActivity = "/test/x5_webView";
+    public static final String test_JSWebViewActivity = "/test/js_webView";
+
     public static final String MainActivityPath = "/main/main";
 
     public static final String WelcomeActivityPath =  "/launch/WelcomeActivity";

@@ -21,6 +21,10 @@ public class RouteManager {
         return startActivity(RouterPath.RNTestActivityPath);
     }
 
+    public static Object startJSWebViewActivity(Serializable obj) {
+        return startActivity(RouterPath.test_JSWebViewActivity, obj);
+    }
+
     public static Object startHomeFragment() {
         return startFragment(RouterPath.HomeHomeFragment);
     }

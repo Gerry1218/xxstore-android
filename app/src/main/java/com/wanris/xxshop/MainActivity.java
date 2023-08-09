@@ -78,9 +78,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
             @Override
             public void onClick(View view) {
                 WebViewParam param = new WebViewParam();
-                param.setUrl("https://www.baidu.com");
-//                param.setUrl("http://192.168.42.210:8080");
-                RouteManager.startWebViewActivity(param);
+//                param.setUrl("https://www.baidu.com");
+                param.setUrl("http://192.168.42.210:8080");
+                RouteManager.startJSWebViewActivity(param);
             }
         });
         btnX5WebView.setOnClickListener(new View.OnClickListener() {
