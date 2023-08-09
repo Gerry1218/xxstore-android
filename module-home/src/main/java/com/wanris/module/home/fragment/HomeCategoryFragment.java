@@ -1,6 +1,5 @@
 package com.wanris.module.home.fragment;
 
-import android.app.ActivityManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,13 +11,12 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.wanris.business.ICallback;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.common.router.RouteManager;
-import com.wanris.business.common.ui.widget.VerticalSwipeRefreshLayout;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.home.R;
 import com.wanris.module.home.adapter.HomeCategoryGoodsListAdapter;
 import com.wanris.module.home.contract.HomeCategoryContract;
 import com.wanris.module.home.presenter.HomeCategoryPresenter;
-import com.wanris.module.home.provider.bean.XXGoodsListRequest;
+import com.wanris.business.provider.bean.XXGoodsListRequest;
 
 import java.util.List;
 

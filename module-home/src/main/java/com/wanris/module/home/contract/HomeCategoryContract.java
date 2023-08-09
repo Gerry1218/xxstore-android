@@ -4,7 +4,7 @@ import com.wanris.business.ICallback;
 import com.wanris.business.common.base.present.IBasePresenter;
 import com.wanris.business.common.base.view.IBaseView;
 import com.wanris.business.response.XXGoodsListData;
-import com.wanris.module.home.provider.bean.XXGoodsListRequest;
+import com.wanris.business.provider.bean.XXGoodsListRequest;
 
 public interface HomeCategoryContract {
     interface View extends IBaseView {

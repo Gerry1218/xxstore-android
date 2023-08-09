@@ -10,8 +10,8 @@ import com.wanris.business.RxThrowableConsumer;
 import com.wanris.business.common.base.present.BasePresenter;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.home.contract.HomeCategoryContract;
-import com.wanris.module.home.provider.IGoodsProvider;
-import com.wanris.module.home.provider.bean.XXGoodsListRequest;
+import com.wanris.business.provider.IGoodsProvider;
+import com.wanris.business.provider.bean.XXGoodsListRequest;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;

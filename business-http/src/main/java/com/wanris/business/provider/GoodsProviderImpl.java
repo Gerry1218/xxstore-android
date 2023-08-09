@@ -1,4 +1,4 @@
-package com.wanris.module.home.provider;
+package com.wanris.business.provider;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wanris.business.http.HttpService;
 import com.wanris.business.response.BaseResponse;
 import com.wanris.business.response.XXGoodsListData;
-import com.wanris.module.home.provider.bean.XXGoodsListRequest;
+import com.wanris.business.provider.bean.XXGoodsListRequest;
 
 import io.reactivex.Flowable;
 

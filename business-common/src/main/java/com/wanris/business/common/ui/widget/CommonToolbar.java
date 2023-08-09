@@ -10,7 +10,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.wanris.business.common.R;
 import com.wanris.business.common.constant.Globals;
@@ -19,6 +21,8 @@ import java.util.concurrent.TimeUnit;
 
 public class CommonToolbar extends LinearLayout {
     private Context mContext;
+    private AppBarLayout mAppBarLayout;
+    private Toolbar mToolbar;
     private ImageView mBackImg;
     private TextView mTitle;
     private RelativeLayout mRightLayout;
@@ -46,6 +50,8 @@ public class CommonToolbar extends LinearLayout {
 
     private void initView() {
         LayoutInflater.from(mContext).inflate(R.layout.common_title_view, this, true);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mBackImg = (ImageView) findViewById(R.id.back_img);
         mTitle = (TextView) findViewById(R.id.toolbar_title_tv);
         mRightLayout = (RelativeLayout) findViewById(R.id.right_layout);
@@ -86,6 +92,15 @@ public class CommonToolbar extends LinearLayout {
         showRightIcon(true);
         mRightImg.setImageResource(resId);
     }
+
+    public void setAppBarLayoutVisibility(boolean visibility) {
+        this.mAppBarLayout.setVisibility(visibility ? VISIBLE : GONE);
+    }
+
+    public Toolbar getToolbar() {
+        return mToolbar;
+    }
+
     public interface CallBack {
         void onLeftClick();
         void onRightClick();

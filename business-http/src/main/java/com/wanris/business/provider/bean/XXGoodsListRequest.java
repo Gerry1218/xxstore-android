@@ -1,4 +1,4 @@
-package com.wanris.module.home.provider.bean;
+package com.wanris.business.provider.bean;
 
 public class XXGoodsListRequest {
     private Integer pageNo;
