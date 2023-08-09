@@ -2,6 +2,7 @@ package com.wanris.business.common.router;
 
 public class RouterPath {
     public static final String RNTestActivityPath = "/rn/RNTestActivity";
+    public static final String test_X5WebViewActivity = "/test/x5webview";
     public static final String MainActivityPath = "/main/main";
 
     public static final String WelcomeActivityPath =  "/launch/WelcomeActivity";
@@ -14,6 +15,7 @@ public class RouterPath {
 
     public static final String GoodsDetailActivity = "/goods/detail";
 
+    public static final String WebViewActivity = "/web/webView";
 
     public static final String HomeHomeFragment = "/home/homeFragment";
     public static final String HomeChatFragment = "/home/chatFragment";

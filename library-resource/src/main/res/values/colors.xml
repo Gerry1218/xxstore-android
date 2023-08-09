@@ -6,4 +6,6 @@
     <color name="color_666666">#666666</color>
     <color name="color_333333">#333333</color>
     <color name="color_0A0A0A">#0A0A0A</color>
+    <color name="color_87FFFFFF">#87ffffff</color>
+    <color name="colorAccent">#00AFF0</color>
 </resources>

@@ -34,6 +34,16 @@
             android:textSize="@dimen/dp_20"/>
 
         <TextView
+            android:id="@+id/tv_webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200"
+            android:padding="5dp"
+            android:text="进入WebView页面JSBridge"
+            android:textSize="@dimen/dp_20"/>
+
+        <TextView
             android:id="@+id/tv_home_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +52,15 @@
             android:padding="5dp"
             android:text="进入Home页面"
             android:textSize="@dimen/dp_20"/>
+        <TextView
+            android:id="@+id/tv_x5webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200"
+            android:padding="5dp"
+            android:text="进入x5WebView页面"
+            android:textSize="@dimen/dp_20"/>
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_marginTop="10dp"
@@ -49,10 +68,6 @@
             android:layout_height="200dp"
             />
 
-        <com.wanris.business.common.ui.widget.X5WebView
-            android:id="@+id/x5Webview"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
     </LinearLayout>
     >
 </androidx.constraintlayout.widget.ConstraintLayout>

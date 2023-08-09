@@ -11,6 +11,7 @@ import com.wanris.business.constant.HttpConfigConstant;
 import com.wanris.business.constant.URLs;
 
 import java.io.IOException;
+import java.net.Proxy;
 import java.nio.charset.Charset;
 import java.util.Set;
 import java.util.TreeSet;
@@ -58,6 +59,10 @@ public class HttpService {
             return okHttpClient;
         }
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
+
+        if (!BuildConfig.DEBUG) {
+            builder.proxy(Proxy.NO_PROXY);
+        }
 
         builder.connectTimeout(HttpConfigConstant.CONNECT_TIME_OUT, TimeUnit.SECONDS);
         builder.readTimeout(HttpConfigConstant.READ_TIME_OUT, TimeUnit.SECONDS);

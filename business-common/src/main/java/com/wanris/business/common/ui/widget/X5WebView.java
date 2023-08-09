@@ -5,15 +5,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
+import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
+import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
 import com.tencent.smtt.sdk.DownloadListener;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
+import java.net.URL;
 
 
 public class X5WebView extends WebView {
@@ -35,7 +41,31 @@ public class X5WebView extends WebView {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            // 用于拦截非法url
+//            Log.d("TAG", "shouldOverrideUrlLoading: " + url);
+//            if (!url.contains("baidu.com")) {
+//                if (canGoBack()) {
+//                    goBack();
+//                }
+//                Toast.makeText(getContext(), "非法网页", Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
             return false;
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView webView, String s) {
+            return super.shouldInterceptRequest(webView, s);
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
+            return super.shouldInterceptRequest(webView, webResourceRequest);
+        }
+
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest, Bundle bundle) {
+            return super.shouldInterceptRequest(webView, webResourceRequest, bundle);
         }
 
         @Override

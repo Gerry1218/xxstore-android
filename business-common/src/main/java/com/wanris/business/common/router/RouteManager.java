@@ -41,6 +41,14 @@ public class RouteManager {
         return startFragment(RouterPath.HomeMineFragment);
     }
 
+    public static Object startWebViewActivity(Serializable obj) {
+        return startActivity(RouterPath.WebViewActivity, obj);
+    }
+
+    public static Object startX5WebViewActivity(Serializable obj) {
+        return startActivity(RouterPath.test_X5WebViewActivity, obj);
+    }
+
     private static Object startActivity(String routePath) {
         return ARouter.getInstance()
                 .build(routePath)

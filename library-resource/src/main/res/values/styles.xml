@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CommonWidget"></style>
+    <!--默认分割线-->
+    <style name="CommonWidget.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0.5</item>
+        <item name="android:background">@color/color_87FFFFFF</item>
+    </style>
+</resources>

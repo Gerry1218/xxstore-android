@@ -9,11 +9,14 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wanris.business.common.bean.ParamBean;
+import com.wanris.business.common.bean.WebViewParam;
 import com.wanris.business.common.router.RouteManager;
 import com.wanris.business.common.Utils;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
 import com.wanris.business.common.ui.widget.X5WebView;
+
+import org.w3c.dom.Text;
 
 @Route(path = RouterPath.MainActivityPath)
 public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
@@ -21,9 +24,10 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private final static String TAG = MainActivity.class.getSimpleName();
     private TextView btnRN;
     private TextView btnHome;
+    private TextView btnWebView;
+    private TextView btnX5WebView;
     private ImageView ivLogo;
 
-    private X5WebView webview;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -46,9 +50,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         super.initViews(savedInstanceState);
         btnRN = findViewById(R.id.tv_rn_btn);
         btnHome = findViewById(R.id.tv_home_btn);
+        btnWebView = findViewById(R.id.tv_webview);
+        btnX5WebView = findViewById(R.id.tv_x5webview);
         ivLogo = findViewById(R.id.iv_logo);
-        webview = findViewById(R.id.x5Webview);
-
     }
 
     @Override
@@ -70,6 +74,23 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
                 RouteManager.startHomeActivity(bean);
             }
         });
+        btnWebView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WebViewParam param = new WebViewParam();
+                param.setUrl("https://www.baidu.com");
+//                param.setUrl("http://192.168.42.210:8080");
+                RouteManager.startWebViewActivity(param);
+            }
+        });
+        btnX5WebView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WebViewParam param = new WebViewParam();
+                param.setUrl("https://www.baidu.com");
+                RouteManager.startX5WebViewActivity(param);
+            }
+        });
     }
 
     @Override
@@ -79,9 +100,6 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
 
         // 根据渠道加载对应方法
         loadImage();
-
-        // x5Webview测试
-        webview.loadUrl("https://www.baidu.com");
 
         // 子模块多渠道打包支持
         Utils.logText();

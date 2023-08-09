@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    {EasyGank}  Copyright (C) {2015}  {CaMnter}
+
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+    The hypothetical commands `show w' and `show c' should show the appropriate
+    parts of the General Public License.  Of course, your program's commands
+    might be different; for a GUI interface, you would use an "about box".
+
+    You should also get your employer (if you work as a programmer) or school,
+    if any, to sign a "copyright disclaimer" for the program, if necessary.
+    For more information on this, and how to apply and follow the GNU GPL, see
+<http://www.gnu.org/licenses/>.
+
+    The GNU General Public License does not permit incorporating your program
+    into proprietary programs.  If your program is a subroutine library, you
+    may consider it more useful to permit linking proprietary applications with
+    the library.  If this is what you want to do, use the GNU Lesser General
+    Public License instead of this License.  But first, please read
+<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="@dimen/dp_6">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:weightSum="1"
+            app:contentInsetStart="@dimen/dp_0"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/back_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:scaleType="center"
+                    android:src="@mipmap/icon_back" />
+
+                <TextView
+                    android:id="@+id/toolbar_title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp_100"
+                    android:layout_marginRight="@dimen/dp_100"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/dp_17" />
+
+                <ImageView
+                    android:id="@+id/rightBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_14"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/right_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/right_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_8"
+                        android:paddingTop="@dimen/dp_3"
+                        android:paddingRight="@dimen/dp_8"
+                        android:paddingBottom="@dimen/dp_3"
+                        android:text=""
+                        android:textColor="@color/color_333333"
+                        android:textSize="@dimen/dp_16"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/right_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/right_layout1"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/right_layout"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/right_btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:text=""
+                        android:textColor="@color/color_FF3730"
+                        android:textSize="@dimen/dp_16"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/right_img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_divider"
+                    style="@style/CommonWidget.Divider"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+</LinearLayout>

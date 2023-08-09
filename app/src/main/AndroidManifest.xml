@@ -32,6 +32,8 @@
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <activity android:name=".launch.activity.WelcomeActivity" android:screenOrientation="portrait" />
 
+<!--        测试用页面-->
+        <activity android:name=".test.X5WebViewActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
