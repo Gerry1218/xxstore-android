@@ -13,7 +13,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        // ARoute路由
+        // ARouter路由
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -75,7 +75,7 @@ dependencies {
     // 集成React Native
     implementation "com.facebook.react:react-native:0.63.5" // From node_modules
     implementation "org.webkit:android-jsc:+"
-    // ARoute路由
+    // ARouter路由
     implementation ("com.alibaba:arouter-api:$versions_arouter_api") {
         exclude group: 'com.android.support'
     }

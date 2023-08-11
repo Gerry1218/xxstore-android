@@ -14,6 +14,7 @@ import com.wanris.business.common.router.RouteManager;
 import com.wanris.business.common.Utils;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
+import com.wanris.business.common.ui.widget.ActionSheetDialog;
 import com.wanris.business.common.ui.widget.X5WebView;
 
 import org.w3c.dom.Text;
@@ -27,6 +28,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private TextView btnWebView;
     private TextView btnX5WebView;
     private ImageView ivLogo;
+    private TextView btnActionSheet;
 
 
     @Override
@@ -53,6 +55,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         btnWebView = findViewById(R.id.tv_webview);
         btnX5WebView = findViewById(R.id.tv_x5webview);
         ivLogo = findViewById(R.id.iv_logo);
+        btnActionSheet = findViewById(R.id.tv_action_sheet_dialog);
     }
 
     @Override
@@ -91,6 +94,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
                 RouteManager.startX5WebViewActivity(param);
             }
         });
+        btnActionSheet.setOnClickListener(v -> {
+            showActionSheetDialog();
+        });
     }
 
     @Override
@@ -103,6 +109,26 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
 
         // 子模块多渠道打包支持
         Utils.logText();
+    }
+
+    private void showActionSheetDialog() {
+        final ActionSheetDialog mDialog = new ActionSheetDialog(MainActivity.this)
+                .builder();
+        mDialog.setCancelable(true)
+                .setTitle("选择")
+                .addSheetItem("保存到相册", ActionSheetDialog.SheetItemColor.GRAY, new ActionSheetDialog.OnSheetItemClickListener() {
+                    @Override
+                    public void onClick(int index) {
+                        Log.d(TAG, "onClick: 保存到相册" + index);
+                    }
+                })
+                .addSheetItem("保存到手机", ActionSheetDialog.SheetItemColor.GRAY, new ActionSheetDialog.OnSheetItemClickListener() {
+                    @Override
+                    public void onClick(int index) {
+                        Log.d(TAG, "onClick: 保存到手机" + index);
+                    }
+                })
+                .show();
     }
 
     @Override

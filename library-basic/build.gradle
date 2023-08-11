@@ -87,4 +87,8 @@ dependencies {
     }
     // fastjson
     api 'com.alibaba:fastjson:1.1.72.android'
+    //支持缩放的photoview
+    api("com.github.chrisbanes:PhotoView:$versions_PhotoView") {
+        exclude group: 'com.android.support'
+    }
 }

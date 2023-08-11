@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.wanris.business.common.ui.widget.ImageBrowserViewPager
+        android:id="@+id/vp_image_browser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_image_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_50"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/st_save_2_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_50"
+        android:drawableLeft="@mipmap/icon_image_download"
+        android:drawablePadding="@dimen/dp_6"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="保存到本地"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        app:stv_corner="@dimen/dp_20"
+        app:stv_stroke_color="@color/white"
+        app:stv_stroke_width="@dimen/dp_1"
+        />
+</RelativeLayout>

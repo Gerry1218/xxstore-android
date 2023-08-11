@@ -145,37 +145,48 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/bg_white_r5"
             android:orientation="vertical">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center_vertical">
                 <ImageView
                     android:id="@+id/iv_shop_icon"
                     android:layout_width="@dimen/dp_50"
                     android:layout_height="@dimen/dp_50"
                     android:layout_centerVertical="true"
-                    android:background="@mipmap/icon_image_error"/>
+                    android:background="@mipmap/icon_shop_logo"
+                    />
 
                 <TextView
-                    android:id="@+id/tvShopName"
+                    android:id="@+id/tv_shop_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_toRightOf="@id/iv_shop_icon"
                     android:layout_weight="1"
-                    android:text="xx店铺"
+                    android:text="乐博农产品"
                     android:textColor="#ff333333"
                     android:textSize="15dp"
                     android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_below="@id/tv_shop_name"
+                    android:layout_alignLeft="@id/tv_shop_name"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="新鲜看的见，健康你我他"
+                    android:textSize="12dp"
+                    android:textColor="@color/color_999" />
 
                 <com.coorchice.library.SuperTextView
                     android:id="@+id/stv_shop"
@@ -190,14 +201,14 @@
                     app:stv_corner="@dimen/dp_10"
                     app:stv_stroke_color="@color/primary_red"
                     app:stv_stroke_width="1dp" />
-            </LinearLayout>
+            </RelativeLayout>
 
-<!--            <com.wanris.business.common.ui.widget.X5WebView-->
-<!--                android:id="@+id/x5Webview"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:visibility="gone"-->
-<!--                android:layout_marginTop="12dp" />-->
+            <com.wanris.business.common.ui.widget.X5WebView
+                android:id="@+id/x5_webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_marginTop="12dp" />
         </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

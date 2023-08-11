@@ -88,7 +88,7 @@ public class XXGoodsListData implements Serializable {
     private long originalPrice;
     private long price;
     private long sales;
-    private SkuList[] skuList;
+    private List<SkuList> skuList;
     private long status;
     private Long stock;
     private String title;
@@ -175,11 +175,11 @@ public class XXGoodsListData implements Serializable {
         this.sales = sales;
     }
 
-    public SkuList[] getSkuList() {
+    public List<SkuList> getSkuList() {
         return skuList;
     }
 
-    public void setSkuList(SkuList[] skuList) {
+    public void setSkuList(List<SkuList> skuList) {
         this.skuList = skuList;
     }
 

@@ -2,14 +2,22 @@ package com.wanris.module.goods.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.smtt.sdk.WebSettings;
+import com.wanris.business.ICallback;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
+import com.wanris.business.common.ui.widget.X5WebView;
+import com.wanris.business.common.utils.FormatHelper;
+import com.wanris.business.common.utils.MyJavaScriptInterface;
 import com.wanris.business.common.utils.PriceHelper;
+import com.wanris.business.provider.bean.XXGoodsDetailRequest;
+import com.wanris.business.response.XXGoodsDetailData;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.goods.contract.GoodsDetailContract;
 import com.wanris.module.goods.presenter.GoodsDetailPresenter;
@@ -22,12 +30,12 @@ import java.util.ArrayList;
 
 @Route(path = RouterPath.GoodsDetailActivity)
 public class GoodsDetailActiviy extends BaseActivity<GoodsDetailContract.View, GoodsDetailContract.Presenter> implements GoodsDetailContract.View, OnBannerListener {
-
     @Autowired
     XXGoodsListData.XXGoodsItemBean params;
-    Banner banner;
-    TextView tvGoodsPrice;
-    TextView tvGoodsName;
+    private Banner banner;
+    private TextView tvGoodsPrice;
+    private TextView tvGoodsName;
+    private X5WebView x5WebView;
 
     @Override
     protected boolean applyFullScreen() {
@@ -57,7 +65,9 @@ public class GoodsDetailActiviy extends BaseActivity<GoodsDetailContract.View, G
         banner = findViewById(R.id.banner);
         tvGoodsPrice = findViewById(R.id.tv_price);
         tvGoodsName = findViewById(R.id.goods_name);
-
+        x5WebView = findViewById(R.id.x5_webView);
+        WebSettings webSettings = x5WebView.getSettings();
+        webSettings.setMinimumFontSize(14);
         Log.d(TAG, "initViews: ");
     }
 
@@ -74,11 +84,32 @@ public class GoodsDetailActiviy extends BaseActivity<GoodsDetailContract.View, G
 
         tvGoodsName.setText(params.getTitle());
         tvGoodsPrice.setText(PriceHelper.priceString(params.getPrice()));
+        doRequest();
     }
 
     @Override
     protected void initListener() {
         super.initListener();
+    }
+
+    private void doRequest() {
+        XXGoodsDetailRequest request = new XXGoodsDetailRequest();
+        request.setSpuId(String.valueOf(params.getId()));
+        getPresenter().getGoodsDetail(request, new ICallback<XXGoodsDetailData>() {
+            @Override
+            public void success(XXGoodsDetailData data) {
+                //图文详情
+                x5WebView.addJavascriptInterface(new MyJavaScriptInterface(GoodsDetailActiviy.this), "imageListener");
+                x5WebView.loadDataWithBaseURL(null, FormatHelper.formatHtmlTag(data.getDetail()),
+                        "text/html", "utf-8", null);
+                x5WebView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void failure() {
+
+            }
+        });
     }
 
     @Override
