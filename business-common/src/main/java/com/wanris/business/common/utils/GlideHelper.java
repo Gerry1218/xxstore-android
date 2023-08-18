@@ -13,6 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.wanris.business.common.BaseApplication;
+import com.wanris.business.common.R;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -78,5 +79,18 @@ public class GlideHelper {
                         }
                     }
                 });
+    }
+
+    public static void loadCenterCrop(String url, ImageView imageView, int placeholderRes, int errorRes) {
+        Glide.with(imageView.getContext())
+                .load(url)
+                .placeholder(placeholderRes)
+                .error(errorRes)
+                .centerCrop()
+                .into(imageView);
+    }
+
+    public static void loadCenterCrop(String url, ImageView imageView) {
+        loadCenterCrop(url, imageView, R.mipmap.icon_image_error, R.mipmap.icon_image_error);
     }
 }

@@ -17,7 +17,7 @@ public class X5WebViewActivity extends BaseActivity {
 
     @Autowired
     WebViewParam params;
-    private X5WebView webview;
+    private X5WebView webView;
 
     @Override
     protected int getLayoutId() {
@@ -43,9 +43,9 @@ public class X5WebViewActivity extends BaseActivity {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
-        webview = findViewById(R.id.x5Webview);
+        webView = findViewById(R.id.x5Webview);
         if (params.getUrl() != null) {
-            webview.loadUrl(params.getUrl());
+            webView.loadUrl(params.getUrl());
         }
     }
 

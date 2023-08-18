@@ -29,7 +29,7 @@ import com.youth.banner.listener.OnBannerListener;
 import java.util.ArrayList;
 
 @Route(path = RouterPath.GoodsDetailActivity)
-public class GoodsDetailActiviy extends BaseActivity<GoodsDetailContract.View, GoodsDetailContract.Presenter> implements GoodsDetailContract.View, OnBannerListener {
+public class GoodsDetailActivity extends BaseActivity<GoodsDetailContract.View, GoodsDetailContract.Presenter> implements GoodsDetailContract.View, OnBannerListener {
     @Autowired
     XXGoodsListData.XXGoodsItemBean params;
     private Banner banner;
@@ -99,7 +99,7 @@ public class GoodsDetailActiviy extends BaseActivity<GoodsDetailContract.View, G
             @Override
             public void success(XXGoodsDetailData data) {
                 //图文详情
-                x5WebView.addJavascriptInterface(new MyJavaScriptInterface(GoodsDetailActiviy.this), "imageListener");
+                x5WebView.addJavascriptInterface(new MyJavaScriptInterface(GoodsDetailActivity.this), "imageListener");
                 x5WebView.loadDataWithBaseURL(null, FormatHelper.formatHtmlTag(data.getDetail()),
                         "text/html", "utf-8", null);
                 x5WebView.setVisibility(View.VISIBLE);

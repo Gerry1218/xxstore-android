@@ -10,7 +10,7 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.wanris.module.goods.activity.GoodsDetailActiviy"
+        <activity android:name="com.wanris.module.goods.activity.GoodsDetailActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name="com.wanris.module.web.WebViewActivity" android:screenOrientation="portrait" />

@@ -8,16 +8,20 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.wanris.business.common.Utils;
+import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.bean.ParamBean;
 import com.wanris.business.common.bean.WebViewParam;
 import com.wanris.business.common.router.RouteManager;
-import com.wanris.business.common.Utils;
-import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
 import com.wanris.business.common.ui.widget.ActionSheetDialog;
-import com.wanris.business.common.ui.widget.X5WebView;
+import com.wanris.module.widget.GoodsSpecDialog;
+import com.wanris.module.widget.bean.GoodsSpecSectionBean;
+import com.wanris.module.widget.bean.SpecItem;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 @Route(path = RouterPath.MainActivityPath)
 public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
@@ -29,6 +33,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private TextView btnX5WebView;
     private ImageView ivLogo;
     private TextView btnActionSheet;
+    private TextView btnGoodsSpec;
 
 
     @Override
@@ -56,6 +61,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         btnX5WebView = findViewById(R.id.tv_x5webview);
         ivLogo = findViewById(R.id.iv_logo);
         btnActionSheet = findViewById(R.id.tv_action_sheet_dialog);
+        btnGoodsSpec = findViewById(R.id.tv_spec_dialog);
     }
 
     @Override
@@ -97,6 +103,9 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         btnActionSheet.setOnClickListener(v -> {
             showActionSheetDialog();
         });
+        btnGoodsSpec.setOnClickListener(v -> {
+            showSpecDialog();
+        });
     }
 
     @Override
@@ -129,6 +138,32 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
                     }
                 })
                 .show();
+    }
+
+    private void showSpecDialog() {
+        List<GoodsSpecSectionBean> beans = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            beans.add(new GoodsSpecSectionBean(true, i + "ROW"));
+
+            List<SpecItem> items = new ArrayList<>();
+
+            Random random = new Random();
+            int len = random.nextInt(10 - 1 + 1) + 1;
+            for (int j = 0; j < len; j++) {
+                String v = "VAL" + j;
+                SpecItem item = new SpecItem();
+                item.setName(v);
+                item.setEnable(true);
+                item.setClickable(true);
+                item.setSaleOut(false);
+                items.add(item);
+            }
+            beans.add(new GoodsSpecSectionBean(items));
+        }
+
+        GoodsSpecDialog dialog = new GoodsSpecDialog(this);
+        dialog.setBeans(beans);
+        dialog.show();
     }
 
     @Override
