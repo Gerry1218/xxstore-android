@@ -9,4 +9,8 @@
         <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
     </style>
+
+    <declare-styleable name="NumberSelector">
+        <attr name="max_count" format="integer" />
+    </declare-styleable>
 </resources>

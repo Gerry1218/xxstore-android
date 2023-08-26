@@ -27,6 +27,10 @@ public class VideoFragment extends BaseFragment<VideoFragmentContract.View, Vide
     }
 
     @Override
+    protected boolean applyImmersionBar() {
+        return false;
+    }
+    @Override
     protected VideoFragmentContract.Presenter initPresenter() {
         return new VideoFragmentPresenter();
     }

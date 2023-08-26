@@ -25,7 +25,10 @@ public class MineFragment extends BaseFragment<MineFragmentContract.View, MineFr
         super.onCreate(savedInstanceState);
         ARouter.getInstance().inject(this);
     }
-
+    @Override
+    protected boolean applyImmersionBar() {
+        return false;
+    }
     @Override
     protected MineFragmentContract.Presenter initPresenter() {
         return new MineFragmentPresenter();

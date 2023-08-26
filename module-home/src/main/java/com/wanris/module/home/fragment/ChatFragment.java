@@ -26,6 +26,11 @@ public class ChatFragment extends BaseFragment<ChatFragmentContract.View, ChatFr
     }
 
     @Override
+    protected boolean applyImmersionBar() {
+        return false;
+    }
+
+    @Override
     protected ChatFragmentContract.Presenter initPresenter() {
         return new ChatFragmentPresenter();
     }
