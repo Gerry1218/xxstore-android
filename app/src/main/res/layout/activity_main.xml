@@ -79,6 +79,15 @@
             android:padding="5dp"
             android:text="商品规格"
             android:textSize="@dimen/dp_20"/>
+        <TextView
+            android:id="@+id/tv_kotlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200"
+            android:padding="5dp"
+            android:text="kotlin页面"
+            android:textSize="@dimen/dp_20"/>
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_marginTop="10dp"

@@ -1,5 +1,6 @@
 package com.wanris.xxshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.wanris.business.common.ui.widget.ActionSheetDialog;
 import com.wanris.module.widget.GoodsSpecDialog;
 import com.wanris.module.widget.bean.GoodsSpecSectionBean;
 import com.wanris.module.widget.bean.SpecItem;
+import com.wanris.xxshop.test.TestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +36,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     private ImageView ivLogo;
     private TextView btnActionSheet;
     private TextView btnGoodsSpec;
-
+    private TextView btnKotlinActivity;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         ivLogo = findViewById(R.id.iv_logo);
         btnActionSheet = findViewById(R.id.tv_action_sheet_dialog);
         btnGoodsSpec = findViewById(R.id.tv_spec_dialog);
+        btnKotlinActivity = findViewById(R.id.tv_kotlin);
     }
 
     @Override
@@ -105,6 +108,11 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
         });
         btnGoodsSpec.setOnClickListener(v -> {
             showSpecDialog();
+        });
+        btnKotlinActivity.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(this, TestActivity.class);
+            startActivity(intent);
         });
     }
 

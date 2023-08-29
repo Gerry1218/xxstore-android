@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -81,6 +83,7 @@ dependencies {
     }
     annotationProcessor "com.alibaba:arouter-compiler:$versions_arouter_compiler"
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation project(':module-home')
     implementation project(':business-common')
     implementation project(':library-basic')
