@@ -41,4 +41,25 @@
             <enum name="right" value="1"/>
         </attr>
     </declare-styleable>
+
+    <!-- CommonFragmentTitleView -->
+    <declare-styleable name="CommonFragmentTitleView">
+        <attr name="show_back" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="right_img" format="reference" />
+        <attr name="right_img2" format="reference" />
+        <attr name="right_img3" format="reference" />
+        <attr name="right_text" format="string" />
+        <attr name="middle_img" format="reference" />
+        <attr name="show_middle_img" format="boolean" />
+    </declare-styleable>
+
+    <!-- CommonFlowLayout-->
+    <declare-styleable name="CommonFlowLayout">
+        <attr name="cfl_icon" format="reference" />
+        <attr name="cfl_icon_width_height" format="dimension" />
+        <attr name="cfl_text" format="string" />
+        <attr name="cfl_textSize" format="dimension" />
+        <attr name="cfl_textColor" format="color" />
+    </declare-styleable>
 </resources>

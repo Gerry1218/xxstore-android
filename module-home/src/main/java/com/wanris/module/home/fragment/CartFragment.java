@@ -2,22 +2,16 @@ package com.wanris.module.home.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.alibaba.fastjson.JSONObject;
-import com.google.gson.Gson;
-import com.wanris.business.common.BaseApplication;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.common.bean.ShopGoodsItemBean;
 import com.wanris.business.common.bean.ShopSectionBean;
@@ -29,16 +23,7 @@ import com.wanris.module.home.adapter.CartAdapter;
 import com.wanris.module.home.contract.CartFragmentContract;
 import com.wanris.module.home.presenter.CartFragmentPresenter;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Route(path = RouterPath.HomeCartFragment)
@@ -103,20 +88,22 @@ public class CartFragment extends BaseFragment<CartFragmentContract.View, CartFr
         });
         cartAdapter.setListener(new CartAdapter.OnDataChangeListener() {
             @Override
-            public void dataChanged(List list1) {
+            public void dataChanged(List newList) {
                 Log.d(TAG, "dataChanged: ");
-                float price = 0;
+                double price = .0;
                 for (int i = 0; i < datas.size(); i++) {
                     ShopSectionBean sectionBean = (ShopSectionBean)datas.get(i);
                     for (int j = 0; j < sectionBean.getGoodsList().size(); j++) {
                         ShopGoodsItemBean bean = sectionBean.getGoodsList().get(j);
                         if (bean.isPitchOn()) {
-                            price += Float.parseFloat(bean.getPrice());
+                            price += Double.parseDouble(bean.getPrice());
                         }
                     }
                 }
-                Log.d(TAG, "dataChanged: total price - " + price);
-                tvTotalPrice.setText(String.valueOf(price));
+                DecimalFormat decimalFormat = new DecimalFormat("0.00");
+                String priceStr = decimalFormat.format(price);
+                Log.d(TAG, "dataChanged: total price - " + priceStr);
+                tvTotalPrice.setText(priceStr);
             }
         });
     }
