@@ -1,6 +1,7 @@
 package com.wanris.module.home.fragment;
 
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.util.Log;
 import android.view.View;
 
@@ -8,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.alibaba.fastjson.JSONObject;
 import com.wanris.business.ICallback;
 import com.wanris.business.common.base.fragment.BaseFragment;
 import com.wanris.business.common.router.RouteManager;
+import com.wanris.business.common.utils.FileHelper;
 import com.wanris.business.response.XXGoodsListData;
 import com.wanris.module.home.R;
 import com.wanris.module.home.adapter.HomeCategoryGoodsListAdapter;
@@ -79,7 +82,14 @@ public class HomeCategoryFragment extends BaseFragment<HomeCategoryContract.View
     @Override
     protected void initData() {
         super.initData();
+        loadMockData();
         requestGoodsList();
+    }
+
+    private void loadMockData() {
+        String jsonStr = FileHelper.readAssetsFile("goods.json");
+        List<XXGoodsListData.XXGoodsItemBean> beans = JSONObject.parseArray(jsonStr, XXGoodsListData.XXGoodsItemBean.class);
+        goodsListAdapter.setNewData(beans);
     }
 
     @Override

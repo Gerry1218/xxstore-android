@@ -7,28 +7,30 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wanris.business.common.utils.ScreenHelper;
-import com.wanris.module.goods.contract.GoodsDetailContract;
 import com.wanris.module.home.R;
 import com.wanris.module.widget.adapter.SectionAdapter;
-import com.wanris.module.widget.bean.GoodsSpecSectionBean;
+import com.wanris.module.widget.bean.Sku;
+import com.wanris.module.widget.bean.SpecSection;
 
 import java.util.List;
 
 public class GoodsSpecDialog extends Dialog {
+    private static final String TAG = GoodsSpecDialog.class.getSimpleName();
     private Context mContext;
     private RecyclerView mRecyclerView;
     private SectionAdapter mSectionAdapter;
-    private List<GoodsSpecSectionBean> beans;
+    private List<SpecSection> beans;
+    private List<Sku> skuList;
 
-    public void setBeans(List<GoodsSpecSectionBean> beans) {
+    public void setBeans(List<SpecSection> beans, List<Sku> skuList) {
         this.beans = beans;
+        this.skuList = skuList;
     }
 
     public GoodsSpecDialog(@NonNull Context context) {
@@ -62,7 +64,7 @@ public class GoodsSpecDialog extends Dialog {
     }
 
     private void updateUI() {
-        mSectionAdapter = new SectionAdapter(beans, null);
+        mSectionAdapter = new SectionAdapter(beans, skuList);
         mRecyclerView.setAdapter(mSectionAdapter);
     }
 

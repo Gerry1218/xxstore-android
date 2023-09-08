@@ -1,0 +1,101 @@
+{
+  "appraisePage": {
+    "code": 0,
+    "count": 0,
+    "items": [],
+    "msg": "第1页,共0条",
+    "pageNo": 1,
+    "pageSize": 10,
+    "total": 0,
+    "totalPageNo": 0
+  },
+  "attributeList": [],
+  "categoryId": 1036494,
+  "categoryIds": [
+    1036494
+  ],
+  "deliveryTime": 1614268800000,
+  "description": "现挖当天送",
+  "detail": "<p>新鲜花生</p>\n<p><img src=\"https://fd-fresh-mall.oss-cn-hangzhou.aliyuncs.com/test_images/e1cb072e854b472f81aa30b207d5cb75_1.jpg\" alt=\"\" width=\"750\" height=\"960\" /><img src=\"https://fd-fresh-mall.oss-cn-hangzhou.aliyuncs.com/test_images/7eb80d0bfb8d4f92b06a302d57c42fcd_8.jpg\" alt=\"\" width=\"750\" height=\"960\" /></p>\n<p><img src=\"https://fd-fresh-mall.oss-cn-hangzhou.aliyuncs.com/test_images/000256c46f0b423dbac004efc19ee0df_11.jpg\" alt=\"\" width=\"790\" height=\"1176\" /><img src=\"https://fd-fresh-mall.oss-cn-hangzhou.aliyuncs.com/test_images/8b29defec9e74b09b3742077d3f8e5f4_12.jpg\" alt=\"\" width=\"790\" height=\"1177\" /><img src=\"https://fd-fresh-mall.oss-cn-hangzhou.aliyuncs.com/test_images/1fb0b21e5b814d92bd2a270e735e1002_13.jpg\" alt=\"\" width=\"790\" height=\"1176\" /></p>",
+  "freightTemplate": {
+    "freightTemplateCarriageDOList": [
+      {
+        "continueMoney": 0,
+        "continueNum": 1,
+        "designatedArea": "江苏省",
+        "firstMoney": 0,
+        "firstNum": 1,
+        "freePrice": 100,
+        "gmtCreate": 1583744539000,
+        "gmtUpdate": 1583744539000,
+        "id": 3,
+        "templateId": 1
+      }
+    ],
+    "freightTemplateDO": {
+      "defaultContinueMoney": 0,
+      "defaultContinueNum": 1,
+      "defaultFirstMoney": 0,
+      "defaultFirstNum": 1,
+      "defaultFreePrice": 0,
+      "deliveryDeadline": 1,
+      "gmtCreate": 1582521797000,
+      "gmtUpdate": 1583744539000,
+      "id": 1,
+      "spuLocation": "",
+      "templateName": "配送点包邮"
+    }
+  },
+  "freightTemplateId": 1,
+  "gmtCreate": 1594890179000,
+  "gmtUpdate": 1691657217000,
+  "id": 1236873,
+  "img": "https://gw.alicdn.com/imgextra/i1/830423356/O1CN01mg6lMZ1af6207xJQV_!!830423356.jpg_790x10000q50.jpg",
+  "imgList": [
+    "https://gw.alicdn.com/imgextra/i1/830423356/O1CN01mg6lMZ1af6207xJQV_!!830423356.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i2/2214940815459/O1CN01TPQKeT1qCGw9sNxvs_!!2214940815459.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i3/2214940815459/O1CN014sUACG1qCGwGCq2bz_!!2214940815459.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i2/2214940815459/O1CN01euSSvK1qCGwBrZiQM_!!2214940815459.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i2/830423356/O1CN012m5YUt1af61uekuRW_!!830423356.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i1/830423356/O1CN01hkhADn1af622K8LPy_!!830423356.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i4/830423356/O1CN01yrXCvl1af61pvAxwR_!!830423356.jpg_790x10000q50.jpg",
+    "https://gw.alicdn.com/imgextra/i3/830423356/O1CN01UbXr9y1af626PnCB7_!!830423356.jpg_790x10000q50.jpg"
+  ],
+  "limitBuyNum": 2,
+  "originalPrice": 2480,
+  "price": 1880,
+  "sales": 417,
+  "skuList": [
+    {
+      "barCode": "BDGS0013",
+      "freezeStock": 0,
+      "gmtCreate": 1594890179000,
+      "gmtUpdate": 1691657217000,
+      "id": 2887,
+      "originalPrice": 2480,
+      "price": 1880,
+      "spuId": 1236873,
+      "stock": 500,
+      "title": "1500g",
+      "vipPrice": 1880
+    },
+    {
+      "barCode": "BDGS0014",
+      "freezeStock": 0,
+      "gmtCreate": 1594890179000,
+      "gmtUpdate": 1691657217000,
+      "id": 2888,
+      "originalPrice": 3980,
+      "price": 2680,
+      "spuId": 1236873,
+      "stock": 500,
+      "title": "2500g",
+      "vipPrice": 2680
+    }
+  ],
+  "status": 1,
+  "stock": 1000,
+  "title": "农家新鲜花生1500",
+  "unit": "斤",
+  "vipPrice": 1880
+}

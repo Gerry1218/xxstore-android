@@ -91,4 +91,6 @@ dependencies {
     api("com.github.chrisbanes:PhotoView:$versions_PhotoView") {
         exclude group: 'com.android.support'
     }
+    // 金刚区
+    api 'com.github.zaaach:TransformersLayout:1.0.8'
 }

@@ -1,0 +1,347 @@
+[
+  {
+    "categoryId": 1036494,
+    "deliveryTime": 1614268800000,
+    "description": "天猫新品",
+    "freightTemplateId": 1,
+    "id": 1236873,
+    "img": "https://gw.alicdn.com/imgextra/O1CNA111b4cY1USplucBnJx_!!3082792517-0-psf.jpg_790x10000q50.jpg",
+    "limitBuyNum": 2,
+    "originalPrice": 12500,
+    "price": 1880,
+    "sales": 417,
+    "skuList": [
+      {
+        "barCode": "BDGS0013",
+        "freezeStock": 0,
+        "gmtCreate": 1594890179000,
+        "gmtUpdate": 1691657217000,
+        "id": 2887,
+        "originalPrice": 2480,
+        "price": 1880,
+        "spuId": 1236873,
+        "stock": 500,
+        "title": "黑色",
+        "vipPrice": 1880
+      },
+      {
+        "barCode": "BDGS0014",
+        "freezeStock": 0,
+        "gmtCreate": 1594890179000,
+        "gmtUpdate": 1691657217000,
+        "id": 2888,
+        "originalPrice": 3980,
+        "price": 2680,
+        "spuId": 1236873,
+        "stock": 500,
+        "title": "白色",
+        "vipPrice": 2680
+      }
+    ],
+    "status": 1,
+    "stock": 1000,
+    "title": "原水秋季法式慵懒风针织衫女装2023新款紫色设计上衣高级感毛衣",
+    "unit": "斤",
+    "vipPrice": 1880
+  },
+  {
+    "categoryId": 1036494,
+    "description": "纯色",
+    "freightTemplateId": 1,
+    "id": 1236872,
+    "img": "https://gw.alicdn.com/bao/uploaded/i2/1982094877/O1CN010ITfGN1ltiU35JcxV_!!1982094877.jpg_790x10000q50.jpg",
+    "originalPrice": 2990,
+    "price": 2180,
+    "sales": 804,
+    "skuList": [
+      {
+        "barCode": "BDGS0010",
+        "freezeStock": 0,
+        "gmtCreate": 1593349499000,
+        "gmtUpdate": 1593693106000,
+        "id": 2886,
+        "originalPrice": 2990,
+        "price": 2190,
+        "spuId": 1236872,
+        "stock": 200,
+        "title": "M码",
+        "vipPrice": 2190
+      }
+    ],
+    "status": 1,
+    "stock": 200,
+    "title": "大码女装辣妹风长袖V领t恤修身显瘦短款撞色插肩袖打底衫上衣",
+    "unit": "件",
+    "vipPrice": 2180
+  },
+  {
+    "categoryId": 1036494,
+    "description": "2500g，7月1日配送",
+    "freightTemplateId": 1,
+    "id": 1236871,
+    "img": "https://gw.alicdn.com/imgextra/i2/2212630162575/O1CN01XSUIk21UtOjbxP7T4_!!0-item_pic.jpg_790x10000q50.jpg",
+    "originalPrice": 2790,
+    "price": 2490,
+    "sales": 1569,
+    "skuList": [
+      {
+        "barCode": "BDSC0020",
+        "freezeStock": 0,
+        "gmtCreate": 1592817789000,
+        "gmtUpdate": 1595410764000,
+        "id": 2885,
+        "originalPrice": 2790,
+        "price": 2490,
+        "spuId": 1236871,
+        "stock": 199,
+        "title": "2500g",
+        "vipPrice": 2490
+      }
+    ],
+    "status": 1,
+    "stock": 199,
+    "title": "森马集团棉致早秋季莫代尔小立领长袖t恤女装内搭薄款中领打底衫",
+    "unit": "斤",
+    "vipPrice": 2490
+  },
+  {
+    "categoryId": 1036494,
+    "description": "750g",
+    "freightTemplateId": 1,
+    "id": 1236869,
+    "img": "https://gw.alicdn.com/imgextra/i1/2211980832031/O1CN01xQLR2N1QsFHYISIAc_!!2211980832031.jpg_790x10000q50.jpg",
+    "originalPrice": 890,
+    "price": 600,
+    "sales": 5,
+    "skuList": [
+      {
+        "barCode": "BDSC0019",
+        "freezeStock": 0,
+        "gmtCreate": 1592408008000,
+        "gmtUpdate": 1593223156000,
+        "id": 2883,
+        "originalPrice": 890,
+        "price": 600,
+        "spuId": 1236869,
+        "stock": 0,
+        "title": "750g",
+        "vipPrice": 600
+      }
+    ],
+    "status": 1,
+    "stock": 0,
+    "title": "短款卫衣外套女士春秋2023新款早秋高级感女装开衫小个子爆款上衣",
+    "unit": "斤",
+    "vipPrice": 600
+  },
+  {
+    "categoryId": 1036494,
+    "description": "750g",
+    "freightTemplateId": 1,
+    "id": 1236868,
+    "img": "https://gw.alicdn.com/imgextra/i4/2945021570/O1CN01UHB2Nj1NT6dzzj20l_!!2945021570.jpg_790x10000q50.jpg",
+    "originalPrice": 650,
+    "price": 450,
+    "sales": 0,
+    "skuList": [
+      {
+        "barCode": "BDSC0018",
+        "freezeStock": 0,
+        "gmtCreate": 1592407928000,
+        "gmtUpdate": 1592999506000,
+        "id": 2882,
+        "originalPrice": 650,
+        "price": 450,
+        "spuId": 1236868,
+        "stock": 199,
+        "title": "750g",
+        "vipPrice": 450
+      }
+    ],
+    "status": 1,
+    "stock": 199,
+    "title": "吊带女士小背心内搭穿夏秋冬20223新款爆款无袖配西装打底衫宽松",
+    "unit": "斤",
+    "vipPrice": 450
+  },
+  {
+    "categoryId": 1036494,
+    "description": "每周配送一次",
+    "freightTemplateId": 1,
+    "id": 1236867,
+    "img": "https://gw.alicdn.com/imgextra/i3/3064938620/O1CN015zDcmJ2DY0pGxHpgJ_!!3064938620.jpg_790x10000q50.jpg",
+    "originalPrice": 1880,
+    "price": 1480,
+    "sales": 538,
+    "skuList": [
+      {
+        "barCode": "BDSC0016",
+        "freezeStock": 0,
+        "gmtCreate": 1592115755000,
+        "gmtUpdate": 1613824562000,
+        "id": 2881,
+        "originalPrice": 1880,
+        "price": 1480,
+        "spuId": 1236867,
+        "stock": 199,
+        "title": "5根",
+        "vipPrice": 1480
+      }
+    ],
+    "status": 1,
+    "stock": 199,
+    "title": "2023夏季新款冰丝背心女半高领性感无袖上衣针织打底衫薄款内搭",
+    "unit": "根",
+    "vipPrice": 1480
+  },
+  {
+    "categoryId": 1036494,
+    "description": "每周配送一次",
+    "freightTemplateId": 1,
+    "id": 1236866,
+    "img": "https://gw.alicdn.com/imgextra/O1CNA1Rjc7CT22OQtryXUlj_!!2933767110-0-psf.jpg_790x10000q50.jpg",
+    "originalPrice": 3580,
+    "price": 2780,
+    "sales": 1281,
+    "skuList": [
+      {
+        "barCode": "BDSC0015",
+        "freezeStock": 0,
+        "gmtCreate": 1592115623000,
+        "gmtUpdate": 1613824571000,
+        "id": 2880,
+        "originalPrice": 3580,
+        "price": 2780,
+        "spuId": 1236866,
+        "stock": 193,
+        "title": "10根",
+        "vipPrice": 2780
+      }
+    ],
+    "status": 1,
+    "stock": 193,
+    "title": "v领冰丝针织吊带背心女夏配西装内搭打底上衣性感修身镂空无袖t恤",
+    "unit": "根",
+    "vipPrice": 2780
+  },
+  {
+    "categoryId": 1036494,
+    "description": "500g",
+    "freightTemplateId": 1,
+    "id": 1236865,
+    "img": "https://gw.alicdn.com/imgextra/i3/2213207552091/O1CN01yGuZbj1RJizPh6ddB_!!0-item_pic.jpg_790x10000q50.jpg",
+    "originalPrice": 690,
+    "price": 350,
+    "sales": 8,
+    "skuList": [
+      {
+        "barCode": "BDSC0013",
+        "freezeStock": 0,
+        "gmtCreate": 1591252571000,
+        "gmtUpdate": 1592999518000,
+        "id": 2879,
+        "originalPrice": 690,
+        "price": 350,
+        "spuId": 1236865,
+        "stock": 190,
+        "title": "500g",
+        "vipPrice": 350
+      }
+    ],
+    "status": 1,
+    "stock": 190,
+    "title": "莫代尔睡裙女夏季背心无袖坎肩大码中年妈妈连衣裙性感薄款家居服",
+    "unit": "斤",
+    "vipPrice": 350
+  },
+  {
+    "categoryId": 1036494,
+    "description": "750g",
+    "freightTemplateId": 1,
+    "id": 1236864,
+    "img": "https://gw.alicdn.com/imgextra/i3/2213291004535/O1CN01UmaEVX1jN4uNHgv00_!!2213291004535.jpg_790x10000q50.jpg",
+    "originalPrice": 890,
+    "price": 600,
+    "sales": 8,
+    "skuList": [
+      {
+        "barCode": "BDSC0012",
+        "freezeStock": 0,
+        "gmtCreate": 1591252466000,
+        "gmtUpdate": 1593223172000,
+        "id": 2878,
+        "originalPrice": 890,
+        "price": 600,
+        "spuId": 1236864,
+        "stock": 0,
+        "title": "750",
+        "vipPrice": 600
+      }
+    ],
+    "status": 1,
+    "stock": 0,
+    "title": "夏季撞色性感露脐短款上衣运动字母吊带潮辣妹紧身外穿内搭背心女",
+    "unit": "斤",
+    "vipPrice": 600
+  },
+  {
+    "categoryId": 1036494,
+    "description": "750g",
+    "freightTemplateId": 1,
+    "id": 1236863,
+    "img": "https://gw.alicdn.com/imgextra/i3/3252624596/O1CN01i41rY41jp14O2TwDv_!!3252624596.jpg_790x10000q50.jpg",
+    "originalPrice": 690,
+    "price": 600,
+    "sales": 2,
+    "skuList": [
+      {
+        "barCode": "BDSC0011",
+        "freezeStock": 0,
+        "gmtCreate": 1591252267000,
+        "gmtUpdate": 1592116768000,
+        "id": 2877,
+        "originalPrice": 690,
+        "price": 600,
+        "spuId": 1236863,
+        "stock": 200,
+        "title": "750",
+        "vipPrice": 600
+      }
+    ],
+    "status": 1,
+    "stock": 200,
+    "title": "吊带女内搭2023年春夏季新款纯色外穿小背心性感纯欲无袖打底上衣",
+    "unit": "斤",
+    "vipPrice": 600
+  },
+  {
+    "categoryId": 1036494,
+    "description": "750g",
+    "freightTemplateId": 1,
+    "id": 1236863,
+    "img": "https://gw.alicdn.com/imgextra/i4/4008704600/O1CN01UcMTqB1jqqeIzF91O_!!4008704600.jpg_790x10000q50.jpg",
+    "originalPrice": 690,
+    "price": 600,
+    "sales": 2,
+    "skuList": [
+      {
+        "barCode": "BDSC0011",
+        "freezeStock": 0,
+        "gmtCreate": 1591252267000,
+        "gmtUpdate": 1592116768000,
+        "id": 2877,
+        "originalPrice": 690,
+        "price": 600,
+        "spuId": 1236863,
+        "stock": 200,
+        "title": "750",
+        "vipPrice": 600
+      }
+    ],
+    "status": 1,
+    "stock": 200,
+    "title": "法式别致真丝小吊带背心女夏外穿V领配西装的内搭桑蚕丝无袖上衣",
+    "unit": "斤",
+    "vipPrice": 600
+  }
+]

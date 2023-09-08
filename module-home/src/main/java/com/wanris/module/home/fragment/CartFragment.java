@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -35,6 +36,7 @@ public class CartFragment extends BaseFragment<CartFragmentContract.View, CartFr
     private TextView btnDelete;
     private CommonFragmentTitleView titleView;
     private List<ShopSectionBean> datas;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,7 @@ public class CartFragment extends BaseFragment<CartFragmentContract.View, CartFr
         ivSelectAll = view.findViewById(R.id.iv_select_all);
         tvTotalPrice = view.findViewById(R.id.tv_total_price);
         btnDelete = view.findViewById(R.id.btn_delete);
-
+        mSwipeRefreshLayout = view.findViewById(R.id.srl_refresh_layout);
     }
 
 
@@ -111,5 +113,10 @@ public class CartFragment extends BaseFragment<CartFragmentContract.View, CartFr
     @Override
     protected void initListener() {
         super.initListener();
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+            Log.d(TAG, "initListener: setOnRefreshListener");
+            mSwipeRefreshLayout.setRefreshing(false);
+        });
+
     }
 }

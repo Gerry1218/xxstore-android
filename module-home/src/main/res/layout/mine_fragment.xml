@@ -172,8 +172,8 @@
                         android:layout_columnWeight="1"
                         android:layout_marginTop="@dimen/dp_10"
                         android:paddingTop="10dp"
-                        app:cfl_icon="@mipmap/ic_order_wait_pay"
-                        app:cfl_icon_width_height="@dimen/dp_26"
+                        app:cfl_icon="@mipmap/icon_order_dfk"
+                        app:cfl_icon_width_height="@dimen/dp_32"
                         app:cfl_text="待付款"
                         app:cfl_textColor="@color/color_111"
                         app:cfl_textSize="@dimen/dp_13" />
@@ -185,8 +185,8 @@
                         android:layout_columnWeight="1"
                         android:layout_marginTop="@dimen/dp_10"
                         android:paddingTop="10dp"
-                        app:cfl_icon="@mipmap/ic_order_wait_send_out_goods"
-                        app:cfl_icon_width_height="@dimen/dp_26"
+                        app:cfl_icon="@mipmap/icon_order_dfh"
+                        app:cfl_icon_width_height="@dimen/dp_32"
                         app:cfl_text="待发货"
                         app:cfl_textColor="@color/color_111"
                         app:cfl_textSize="@dimen/dp_13" />
@@ -198,8 +198,8 @@
                         android:layout_columnWeight="1"
                         android:layout_marginTop="@dimen/dp_10"
                         android:paddingTop="10dp"
-                        app:cfl_icon="@mipmap/ic_order_wait_get_goods"
-                        app:cfl_icon_width_height="@dimen/dp_26"
+                        app:cfl_icon="@mipmap/icon_order_dsh"
+                        app:cfl_icon_width_height="@dimen/dp_32"
                         app:cfl_text="待收货"
                         app:cfl_textColor="@color/color_111"
                         app:cfl_textSize="@dimen/dp_13" />
@@ -211,8 +211,8 @@
                         android:layout_columnWeight="1"
                         android:layout_marginTop="@dimen/dp_10"
                         android:paddingTop="10dp"
-                        app:cfl_icon="@mipmap/ic_order_signed_get_goods"
-                        app:cfl_icon_width_height="@dimen/dp_26"
+                        app:cfl_icon="@mipmap/icon_order_dpj"
+                        app:cfl_icon_width_height="@dimen/dp_32"
                         app:cfl_text="待评价"
                         app:cfl_textColor="@color/color_111"
                         app:cfl_textSize="@dimen/dp_13" />
@@ -225,9 +225,9 @@
                         android:layout_columnWeight="1"
                         android:layout_marginTop="@dimen/dp_10"
                         android:paddingTop="10dp"
-                        app:cfl_icon="@mipmap/ic_refund_list"
-                        app:cfl_icon_width_height="@dimen/dp_26"
-                        app:cfl_text="退货"
+                        app:cfl_icon="@mipmap/icon_order_sh"
+                        app:cfl_icon_width_height="@dimen/dp_32"
+                        app:cfl_text="退款/售后"
                         app:cfl_textColor="@color/color_111"
                         app:cfl_textSize="@dimen/dp_13" />
                 </GridLayout>

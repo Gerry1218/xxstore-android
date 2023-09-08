@@ -8,11 +8,13 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.alibaba.fastjson.JSONObject;
 import com.tencent.smtt.sdk.WebSettings;
 import com.wanris.business.ICallback;
 import com.wanris.business.common.base.activity.BaseActivity;
 import com.wanris.business.common.router.RouterPath;
 import com.wanris.business.common.ui.widget.X5WebView;
+import com.wanris.business.common.utils.FileHelper;
 import com.wanris.business.common.utils.FormatHelper;
 import com.wanris.business.common.utils.MyJavaScriptInterface;
 import com.wanris.business.common.utils.PriceHelper;
@@ -85,6 +87,22 @@ public class GoodsDetailActivity extends BaseActivity<GoodsDetailContract.View, 
         tvGoodsName.setText(params.getTitle());
         tvGoodsPrice.setText(PriceHelper.priceString(params.getPrice()));
         doRequest();
+
+        loadMockData();
+    }
+
+    void loadMockData() {
+        String jsonStr = FileHelper.readAssetsFile("goods_detail.json");
+        XXGoodsDetailData data = JSONObject.parseObject(jsonStr, XXGoodsDetailData.class);
+        banner.setImages(data.getImgList())
+                .setImageLoader(new BannerImageLoader())
+                .setOnBannerListener(this)
+                .start();
+
+        x5WebView.addJavascriptInterface(new MyJavaScriptInterface(GoodsDetailActivity.this), "imageListener");
+        x5WebView.loadDataWithBaseURL(null, FormatHelper.formatHtmlTag(data.getDetail()),
+                "text/html", "utf-8", null);
+        x5WebView.setVisibility(View.VISIBLE);
     }
 
     @Override

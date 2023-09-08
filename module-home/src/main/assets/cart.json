@@ -1,50 +1,58 @@
-[{
-  "shopId": "1",
-  "shopName": "一乐商贸",
-  "shopLogo": "https://gw.alicdn.com/imgextra//da/80/TB1ic3HcvjM8KJjSZFsSutdZpXa.jpg_110x10000q50.jpg_.webp",
-  "goodsList": [{
-    "goodsId": "11",
-    "goodsName": "四川安岳黄柠檬新鲜水果皮薄当季整箱精选香水甜青柠檬小金桔特产",
-    "goodsUrl": "https://gw.alicdn.com/imgextra/i4/3476360360/O1CN01ppUTbP1EWvLEE1gFz_!!3476360360.jpg_Q75.jpg",
-    "price": "8.8",
-    "count": 1
+[
+  {
+    "shopId": "1",
+    "shopName": "一乐商贸",
+    "shopLogo": "https://gw.alicdn.com/imgextra//da/80/TB1ic3HcvjM8KJjSZFsSutdZpXa.jpg_110x10000q50.jpg_.webp",
+    "goodsList": [
+      {
+        "goodsId": "11",
+        "goodsName": "四川安岳黄柠檬新鲜水果皮薄当季整箱精选香水甜青柠檬小金桔特产",
+        "goodsUrl": "https://gw.alicdn.com/imgextra/i4/3476360360/O1CN01ppUTbP1EWvLEE1gFz_!!3476360360.jpg_Q75.jpg",
+        "price": "8.8",
+        "count": 1
+      },
+      {
+        "goodsId": "12",
+        "goodsName": "四川攀枝花凯特芒果新鲜10应季斤水果芒果整箱包邮特大青忙果当季",
+        "goodsUrl": "https://gw.alicdn.com/imgextra/i3/2207575934677/O1CN01hSB9le1kQ7GNRJRaS_!!2207575934677.jpg_Q75.jpg",
+        "price": "13.8",
+        "count": 2
+      }
+    ]
   },
-    {
-      "goodsId": "12",
-      "goodsName": "四川攀枝花凯特芒果新鲜10应季斤水果芒果整箱包邮特大青忙果当季",
-      "goodsUrl": "https://gw.alicdn.com/imgextra/i3/2207575934677/O1CN01hSB9le1kQ7GNRJRaS_!!2207575934677.jpg_Q75.jpg",
-      "price": "13.8",
-      "count": 2
-    }]
-},
   {
     "shopId": "2",
     "shopName": "一博商贸",
     "shopLogo": "https://gw.alicdn.com/imgextra//75/bf/TB17lajzUY1gK0jSZFCSuwwqXXa.jpg_110x10000q50.jpg",
-    "goodsList": [{
-      "goodsId": "21",
-      "goodsName": "突尼斯软籽石榴10斤新鲜水果当季整箱包邮四川会理红宝石榴9无籽",
-      "price": "16.8",
-      "goodsUrl": "https://gw.alicdn.com/imgextra/i1/3015214310/O1CN01WJGqeK1hi1u4t75By_!!3015214310.jpg_Q75.jpg",
-      "count": 3
-    }]
-  },{
-  "shopId": "3",
-  "shopName": "乐博商贸",
-  "shopLogo": "https://gw.alicdn.com/imgextra/i1/O1CN01bZjlSC1Y3sVQ6FzyO_!!6000000003004-2-tps-258-258.png_110x10000.jpg",
-  "goodsList": [{
-    "goodsId": "31",
-    "goodsName": "红茶春茶茶叶自己喝正宗安徽特级高山红香螺浓香罐装礼盒500g",
-    "price": "36",
-    "goodsUrl": "https://gw.alicdn.com/imgextra/i4/3937219703/O1CN01j5ETZR2LY1rtsU3xe_!!3937219703-0-C2M.jpg_Q75.jpg",
-    "count": 1
+    "goodsList": [
+      {
+        "goodsId": "21",
+        "goodsName": "突尼斯软籽石榴10斤新鲜水果当季整箱包邮四川会理红宝石榴9无籽",
+        "price": "16.8",
+        "goodsUrl": "https://gw.alicdn.com/imgextra/i1/3015214310/O1CN01WJGqeK1hi1u4t75By_!!3015214310.jpg_Q75.jpg",
+        "count": 3
+      }
+    ]
   },
-    {
-      "goodsId": "32",
-      "goodsName": "新疆西梅新鲜水果整箱当季应季李子西梅果5斤包邮时令水果酸脆甜",
-      "price": "27.99",
-      "goodsUrl": "https://gw.alicdn.com/imgextra/i3/3476360360/O1CN017WNVZH1EWvRwu3ot7_!!3476360360.jpg_Q75.jpg",
-      "count": 1
-    }]
-}
+  {
+    "shopId": "3",
+    "shopName": "乐博商贸",
+    "shopLogo": "https://gw.alicdn.com/imgextra/i1/O1CN01bZjlSC1Y3sVQ6FzyO_!!6000000003004-2-tps-258-258.png_110x10000.jpg",
+    "goodsList": [
+      {
+        "goodsId": "31",
+        "goodsName": "红茶春茶茶叶自己喝正宗安徽特级高山红香螺浓香罐装礼盒500g",
+        "price": "36",
+        "goodsUrl": "https://gw.alicdn.com/imgextra/i4/3937219703/O1CN01j5ETZR2LY1rtsU3xe_!!3937219703-0-C2M.jpg_Q75.jpg",
+        "count": 1
+      },
+      {
+        "goodsId": "32",
+        "goodsName": "新疆西梅新鲜水果整箱当季应季李子西梅果5斤包邮时令水果酸脆甜",
+        "price": "27.99",
+        "goodsUrl": "https://gw.alicdn.com/imgextra/i3/3476360360/O1CN017WNVZH1EWvRwu3ot7_!!3476360360.jpg_Q75.jpg",
+        "count": 1
+      }
+    ]
+  }
 ]
