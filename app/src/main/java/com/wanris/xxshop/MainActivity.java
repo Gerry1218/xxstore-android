@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -23,6 +25,7 @@ import com.wanris.module.widget.bean.GoodsSpec;
 import com.wanris.module.widget.bean.Sku;
 import com.wanris.module.widget.bean.SpecGroup;
 import com.wanris.module.widget.bean.SpecSection;
+import com.wanris.xxshop.adapter.MyAdapter;
 import com.wanris.xxshop.test.TestActivity;
 
 import java.util.ArrayList;
@@ -32,14 +35,8 @@ import java.util.List;
 public class MainActivity extends BaseActivity<MainContract.View, MainContract.Presenter> implements MainContract.View {
 
     private final static String TAG = MainActivity.class.getSimpleName();
-    private TextView btnRN;
-    private TextView btnHome;
-    private TextView btnWebView;
-    private TextView btnX5WebView;
+
     private ImageView ivLogo;
-    private TextView btnActionSheet;
-    private TextView btnGoodsSpec;
-    private TextView btnKotlinActivity;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -59,64 +56,71 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        super.initViews(savedInstanceState);
-        btnRN = findViewById(R.id.tv_rn_btn);
-        btnHome = findViewById(R.id.tv_home_btn);
-        btnWebView = findViewById(R.id.tv_webview);
-        btnX5WebView = findViewById(R.id.tv_x5webview);
+        super.initViews(savedInstanceState);;
+
         ivLogo = findViewById(R.id.iv_logo);
-        btnActionSheet = findViewById(R.id.tv_action_sheet_dialog);
-        btnGoodsSpec = findViewById(R.id.tv_spec_dialog);
-        btnKotlinActivity = findViewById(R.id.tv_kotlin);
+        ArrayList<String> dataList = new ArrayList<>();
+        dataList.add("进入RN页面");
+        dataList.add("打开actionSheetDialog");
+        dataList.add("进入WebView页面JSBridge");
+        dataList.add("进入Home页面");
+        dataList.add("进入x5WebView页面");
+        dataList.add("商品规格");
+        dataList.add("kotlin页面");
+        ListView listView = findViewById(R.id.list_view);
+        MyAdapter adapter = new MyAdapter(dataList);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            handleEvent(position);
+        });
+    }
+
+    private void handleEvent(int position) {
+        switch (position) {
+            case 0 : {
+                Log.d(TAG, "onClick: ");
+                RouteManager.startRNTestActivity();
+                break;
+            }
+            case 1: {
+                showActionSheetDialog();
+                break;
+            }
+            case 2: {
+                WebViewParam param = new WebViewParam();
+                param.setUrl("https://api.wanris.com");
+                RouteManager.startJSWebViewActivity(param);
+                break;
+            }
+            case 3: {
+                ParamBean bean = new ParamBean();
+                bean.setName("Gerry");
+                bean.setNumber(1218);
+                RouteManager.startHomeActivity(bean);
+                break;
+            }
+            case 4: {
+                WebViewParam param = new WebViewParam();
+                param.setUrl("https://www.baidu.com");
+                RouteManager.startX5WebViewActivity(param);
+                break;
+            }
+            case 5: {
+                showSpecDialog();
+                break;
+            }
+            case 6 :{
+                Intent intent = new Intent();
+                intent.setClass(this, TestActivity.class);
+                startActivity(intent);
+                break;
+            }
+        }
     }
 
     @Override
     protected void initListener() {
         super.initListener();
-        btnRN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: ");
-                RouteManager.startRNTestActivity();
-            }
-        });
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ParamBean bean = new ParamBean();
-                bean.setName("Gerry");
-                bean.setNumber(1218);
-                RouteManager.startHomeActivity(bean);
-            }
-        });
-        btnWebView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WebViewParam param = new WebViewParam();
-//                param.setUrl("https://www.baidu.com");
-                param.setUrl("http://192.168.42.210:8080");
-                RouteManager.startJSWebViewActivity(param);
-            }
-        });
-        btnX5WebView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WebViewParam param = new WebViewParam();
-                param.setUrl("https://www.baidu.com");
-                RouteManager.startX5WebViewActivity(param);
-            }
-        });
-        btnActionSheet.setOnClickListener(v -> {
-            showActionSheetDialog();
-        });
-        btnGoodsSpec.setOnClickListener(v -> {
-            showSpecDialog();
-        });
-        btnKotlinActivity.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setClass(this, TestActivity.class);
-            startActivity(intent);
-        });
     }
 
     @Override
